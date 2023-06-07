@@ -8,6 +8,7 @@
 <title>Header</title>
 <script src="https://kit.fontawesome.com/7c496c47e4.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="./css/header.css">
+<link rel="stylesheet" href="./css/search.css">
 <link rel="shortcut icon" href="./icons/favico.png" type=image/x-icon>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 

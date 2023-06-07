@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+::selection{
+	color: #fff;
+	background: rgb(14, 73, 80);
+}
+
+.wrapper{
+	max-width: 100px;
+	margin: auto;
+}
+
+.wrapper .search-input{
+	background: white;
+	width: 25%;
+	border-radius: 5px;
+	position: absolute;
+	margin: auto;
+	top: 7px;
+	right: 30px;
+}
+
+.search-input input{
+	height: 55px;
+	width: 100%;
+	outline: noe;
+	border: none;
+	border-radius: 5px;
+	padding: 0 60px 0 20px;
+	font-size: 18px;
+}
+
+.search-input.active input{
+    border-radius: 5px 5px 0 0;
+}
+
+.search-input .icon{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 20px;
+    color: #1e7682;
+    cursor: pointer;
+}
