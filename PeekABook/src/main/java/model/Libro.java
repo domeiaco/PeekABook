@@ -10,11 +10,11 @@ public class Libro extends Articolo{
 	private Genere genere;
 	private Autore autore;
 	
-	private String getTitolo() {
+	public String getTitolo() {
 		return titolo;
 	}
 	
-	private void setTitolo(String titolo) {
+	public void setTitolo(String titolo) {
 		this.titolo = titolo;
 	}
 	

@@ -142,11 +142,10 @@ public class ArticoloDAO{
 			ps.setInt(3, codice);
 		
 			ResultSet rs = ps.executeQuery();
-			Articolo a = new Articolo();
-		
+			Libro l = new Libro();
 			if(rs.next()) {
 				LibroDAO libroDAO = new LibroDAO();
-				Libro l = libroDAO.doRetrieveLibroByArticolo(rs.getInt("codice"));
+				l = libroDAO.doRetrieveLibroByArticolo(rs.getInt("codice"));
 			}
 			return l;
 		} catch(SQLException e) {

@@ -17,7 +17,10 @@ import java.util.ArrayList;
 public class Home extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		ArticoloDAO articoloDAO = new ArticoloDAO();
+		ArrayList<Articolo> articoli = articoloDAO.doRetrieveArticoliByValutazione(0, 4);
 		
+		request.setAttribute("articoli", articoli);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);

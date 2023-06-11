@@ -12,6 +12,7 @@
 	<link rel="shortcut icon" href="./icons/favico.jpg" type="image/x-icon">
 	<link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/items.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -20,11 +21,11 @@
 		<div class="container">
 			<h1 class="lg-title">Opere consigliate</h1>
 			
-			<div class="products-item">
+			<div class="product-items">
 				<c:forEach items="${articoli}" var="consigliato">
 					<div class="product">
 						<div class="product-img">
-							<img alt="product image" src="./images/${consigliato.pathImg} name="${consigliato.nome}" onclick="document.location='http://localhost:8080/PeekABook/ShowProduct?nome='+this.name;">
+							<img alt="product image" src="./images/${consigliato.pathImg}" name="${consigliato.nome}" onclick="document.location='http://localhost:8080/PeekABook/ShowProduct?nome='+this.name;">
 						</div>
 						<div class=product-info>
 							<div class=product-info-top>
