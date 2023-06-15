@@ -23,22 +23,22 @@
 	</div>
 	<div class="nav-items">
 		<li><a href="http://localhost:8080/PeekABook/Home">Home</a></li>
-		<li><a href="http://localhost:8080/PeekABook/Home">Libri</a></li>
-		<li><a href="http://localhost:8080/PeekABook/Home">Generi</a></li>
+		<li><a href="http://localhost:8080/PeekABook/ShowAll">Libri</a></li>
+		<li><a href="http://localhost:8080/PeekABook/ChooseGenere">Generi</a></li>
 		<li><a href="http://localhost:8080/PeekABook/Home">Contatti</a></li>
 		<c:choose>
 			<c:when test="${not empty utente}">
 				<c:choose>
 					<c:when test="${utente.admin==1}">
-						<li><a class="icons" href="http://localhost:8080/PeekABook/AdminPage" id="user"><i class="fa-solid fa-user-gear fa-lg" style="color: #ffffff;"></i></a></li>
+						<li><a class="icons" href="http://localhost:8080/PeekABook/AdminPage" id="user"><i class="fa-solid fa-user-gear fa-lg"></i></a></li>
 					</c:when>
 					<c:otherwise>
-						<li><a class="icons" href="http://localhost:8080/PeekABook/UserPage" id="user"><i class="fa-solid fa-user fa-lg" style="color: #ffffff;"></i></a></li>
+						<li><a class="icons" href="http://localhost:8080/PeekABook/UserPage" id="user"><i class="fa-solid fa-user fa-lg"></i></a></li>
 					</c:otherwise>
 				</c:choose>
 			</c:when>
 			<c:otherwise>
-				<li><a href="http://localhost:8080/PeekABook/login.jsp">Login</a></li>
+				<li><a href="http://localhost:8080/PeekABook/login.html">Login</a></li>
 			</c:otherwise>
 		</c:choose>
 		<c:choose>
@@ -46,7 +46,7 @@
 				<li><a class="icons" href="http://localhost:8080/PeekABook/ShowCarrello" id="cart"><i class="fas fa-shopping-cart fa-lg"></i><p style="color: white; display: inline; margin-left: 3px;">${carrello.numeroArticoli}</p></a></li>
 			</c:when>
 			<c:otherwise>
-				<li><a class="icons" href="http://localhost:8080/PeekABook/login.jsp" id="cart"><i class="fas fa-shopping-cart fa-lg"></i></a></li>
+				<li><a class="icons" href="http://localhost:8080/PeekABook/login.html" id="cart"><i class="fas fa-shopping-cart fa-lg"></i></a></li>
 			</c:otherwise>
 		</c:choose>
 	</div>

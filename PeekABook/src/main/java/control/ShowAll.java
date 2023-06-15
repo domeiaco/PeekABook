@@ -7,22 +7,22 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.rmi.ServerException;
 import java.util.ArrayList;
 
-@WebServlet("/Home")
+@WebServlet("/ShowAll")
 
-public class Home extends HttpServlet{
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+public class ShowAll extends HttpServlet{
+public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		ArticoloDAO articoloDAO = new ArticoloDAO();
-		ArrayList<Articolo> articoli = articoloDAO.doRetrieveArticoliByValutazione(0, 4);
+		ArrayList<Articolo> articoli = articoloDAO.doRetrieveArticoli(0, 100);
 		
 		request.setAttribute("articoli", articoli);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("show-all.jsp");
         dispatcher.forward(request, response);
 	}
 }

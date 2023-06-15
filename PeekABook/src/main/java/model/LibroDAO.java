@@ -69,7 +69,7 @@ public class LibroDAO{
 	}
 	public ArrayList<Libro> doRetrieveLibroByGenere(Genere genere, int limit, int offset){
 		try(Connection con = ConPool.getConnection()){
-			PreparedStatement ps = con.prepareStatement("SELECT * FROM Libro l, Articolo a, GenLibro g WHERE l.articolo=a.codice AND g.genere=? LIMIT ?,?");
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM Libro l, Articolo a, GenLibro g WHERE l.articolo=a.codice AND g.genere=? AND g.libro=l.articolo LIMIT ?,?");
 			ps.setString(1, genere.getNome());
 			ps.setInt(2, limit);
 			ps.setInt(3, offset);

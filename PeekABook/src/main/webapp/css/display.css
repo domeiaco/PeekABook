@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+
+*{
+	font-family: "Montserrat", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	overflow-x: hidden;
+}
+
+.container{
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.container > h1{
+	padding:20px 0;
+}
+
+.card{
+	display: flex;
+}
+
+.products{
+	flex: 0.75;
+}
+
+.product{
+	display: flex;
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	border: 1px solid silver;
+	margin-bottom: 20px;
+}
+
+.product:hover{
+	border: none;
+	box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+	transform: scale(1.01);
+}
+
+.product-info{
+	padding: 20px;
+	width: 100%;
+	position:relative;
+}
+
+.product-price{
+	margin-bottom: 20px
+}
+
+.product-remove{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 25px;
+    background-color: #0e4950;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product-remove:hover{
+    background-color: white;
+    color: #0e4950;
+    font-weight: 600;
+    border: 1px solid #0e4950;
+}
+
+@media screen and (max-width: 700px) {
+    .remove {
+        display: none;
+    }
+
+    .product {
+        height: 150px;
+    }
+    
+    .product-price{
+	margin-bottom: 10px
+	}
+}
+
+@media screen and (max-width: 900px){
+    .card{
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 1220px){
+    .container{
+        max-width: 95%;
+    }
+}

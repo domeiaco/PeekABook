@@ -49,26 +49,29 @@ img{
 }
 
 .product{
+	height: 32rem;
 	margin: 2rem;
 	position: relative;
 	background: #ededed;
-    padding: 3rem 0.5rem 2rem 0.5rem;
+    padding: 0.5rem 0.5rem 0rem 0.5rem;
     cursor: pointer;
+    border-radius: 10px;
 }
 
 .product-img{
 	background: rgba(255,255,255,0.5);
 	box-shadow: 0 0 20px 10px rgba(255,255,255,0.5);
 	width: 200px;
-	height: auto;
-	margin: 0 auto;
+	height: 310px;
+	margin: 15px auto;
 	border-radius: 50%;
 	transition: background 0.5s ease;
 }
 
 .product-info{
 	background: white;
-	padding: 2rem;
+	padding: 1rem;
+	border-radius: 10px;
 }
 
 .product-info-top{
