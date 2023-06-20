@@ -139,7 +139,7 @@ public class ArticoloDAO{
 		try(Connection con = ConPool.getConnection()){
 		
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Articolo WHERE codice=?");
-			ps.setInt(3, codice);
+			ps.setInt(1, codice);
 		
 			ResultSet rs = ps.executeQuery();
 			Libro l = new Libro();
@@ -195,5 +195,32 @@ public class ArticoloDAO{
             throw new RuntimeException(e);
         }
     }
+	
+	public ArrayList<Articolo> doRetrieveArticoliByNome(String nome, int limit, int offset){
+		try(Connection con = ConPool.getConnection()){
+			
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM Articolo WHERE nome=? LIMIT ?,?");
+			ps.setString(1, nome);
+			ps.setInt(2, limit);
+			ps.setInt(3, offset);
+		
+			ResultSet rs = ps.executeQuery();
+			ArrayList<Articolo> articoli = new ArrayList<>();
+		
+			while(rs.next()) {
+				Articolo a = new Articolo();
+				a.setCodice(rs.getInt("codice"));
+				a.setPrezzo(rs.getDouble("prezzo"));
+				a.setQuantita(rs.getInt("quantita"));
+				a.setValutazione(rs.getInt("valutazione"));
+				a.setPathImg(rs.getString("copertina"));
+				a.setNome(rs.getString("nome"));
+				articoli.add(a);
+			}
+			return articoli;
+		} catch(SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 
 }

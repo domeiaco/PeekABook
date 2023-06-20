@@ -192,10 +192,10 @@ public class UtenteDAO{
 		}
 	}
 	
-	public boolean doVerifyDuplicate(String email) {
+	public boolean doVerifyDuplicate(Utente utente) {
 		try(Connection con = ConPool.getConnection()){
-			PreparedStatement ps = con.prepareStatement("SELECT id FROM Utente WHERE email=?");
-			ps.setString(1, email);
+			PreparedStatement ps = con.prepareStatement("SELECT id FROM Utente WHERE username=?");
+			ps.setString(1, utente.getUsername());
 			ResultSet rs =ps.executeQuery();
 			if(rs.next())
 				return true;

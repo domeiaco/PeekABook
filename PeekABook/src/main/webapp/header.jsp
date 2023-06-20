@@ -25,7 +25,6 @@
 		<li><a href="http://localhost:8080/PeekABook/Home">Home</a></li>
 		<li><a href="http://localhost:8080/PeekABook/ShowAll">Libri</a></li>
 		<li><a href="http://localhost:8080/PeekABook/ChooseGenere">Generi</a></li>
-		<li><a href="http://localhost:8080/PeekABook/Home">Contatti</a></li>
 		<c:choose>
 			<c:when test="${not empty utente}">
 				<c:choose>

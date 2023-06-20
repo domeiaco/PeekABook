@@ -11,8 +11,15 @@
 	<script src="https://kit.fontawesome.com/7c496c47e4.js" crossorigin="anonymous"></script>
 	<link rel="shortcut icon" href="./icons/favico.jpg" type="image/x-icon">
 	<link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/display.css">
+    <c:choose>
+        <c:when test="${numeroUtenti<2}">
+            <link rel="stylesheet" href="./css/footer1.css">
+        </c:when>
+        <c:otherwise>
+            <link rel="stylesheet" href="./css/footer.css">
+        </c:otherwise>
+    </c:choose>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<style>
         .product-remove:hover a{

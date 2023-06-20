@@ -72,6 +72,11 @@ public class CarrelloDAO {
             
             int x = ps.executeUpdate();
             
+            ps= con.prepareStatement("DELETE FROM ArticoloSelezionato WHERE utente=?");
+            ps.setInt(1,carrello.getUtente().getId());
+            
+            x+=ps.executeUpdate();
+            
             LinkedHashMap<Articolo, Integer> articoli = carrello.getArticoli();
             Set<Articolo> keys = articoli.keySet();
             
