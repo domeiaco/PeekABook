@@ -206,4 +206,33 @@ public class UtenteDAO{
 		}
 	}
 	
+	public Utente doRetrieveById(Integer id) {
+		Utente u = new Utente();
+
+		try(Connection con = ConPool.getConnection()){
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM Utente WHERE id=?");
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				u.setId(rs.getInt(1));
+				u.setAdmin(rs.getInt(2));
+				u.setEmail(rs.getString(3));
+				u.setUsername(rs.getString(4));
+				u.setPassword(rs.getString(5));
+				u.setNome(rs.getString(6));
+				u.setCognome(rs.getString(7));
+				u.setVia(rs.getString(8));
+				u.setCivico(rs.getInt(9));
+				u.setCitta(rs.getString(10));
+				u.setCap(rs.getInt(11));
+				return u;
+			}
+			else {
+				return null;
+			}
+			
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
 }

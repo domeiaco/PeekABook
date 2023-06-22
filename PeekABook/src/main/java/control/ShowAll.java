@@ -25,4 +25,9 @@ public void doGet(HttpServletRequest request, HttpServletResponse response) thro
 		RequestDispatcher dispatcher = request.getRequestDispatcher("show-all.jsp");
         dispatcher.forward(request, response);
 	}
+
+public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	doGet(request, response);
+}
 }

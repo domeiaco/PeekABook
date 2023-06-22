@@ -31,6 +31,15 @@
         }
     </style>
 </head>
+
+<%
+Boolean isAdmin = (Boolean) session.getAttribute("isAdmin");
+if(isAdmin==null||!isAdmin){
+	response.sendRedirect("http://localhost:8080/PeekABook/login.html");
+	return;
+}
+%>
+
 <body>
 	<jsp:include page="../header.jsp"></jsp:include>
 	<div class="container">

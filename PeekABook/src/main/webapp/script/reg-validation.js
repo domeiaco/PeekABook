@@ -12,15 +12,6 @@ const civicoErrorMessage = "Può contenere solo numeri";
 const capErrorMessage = "Deve essere nel formato #####";
 const usernameErrorMessage = "Può contenere solo caratteri alfanumerici";
 
-let smallName = document.getElementById("errorName");
-let smallSurname = document.getElementById("errorSurname");
-let smallUsername = document.getElementById("errorUsername");
-let smallPassword = document.getElementById("errorPassword");
-let smallEmail = document.getElementById("errorEmail");
-let smallVia = document.getElementById("errorVia");
-let smallCitta = document.getElementById("errorCitta");
-let smallCap = document.getElementById("errorCap");
-let smallCivico = document.getElementById("errorCivico");
 
 form.addEventListener('submit', e => {
     e.preventDefault();

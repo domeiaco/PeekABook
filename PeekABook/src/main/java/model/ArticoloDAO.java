@@ -64,7 +64,7 @@ public class ArticoloDAO{
 		
 		try(Connection con = ConPool.getConnection()){
 		
-			PreparedStatement ps = con.prepareStatement("INSERT INTO Articolo(prezzo, valutazione, quantita, copertina, nome) VALUES (?,?,?,?,?");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO Articolo(prezzo, valutazione, quantita, copertina, nome) VALUES (?,?,?,?,?)");
 		
 			ps.setDouble(1, articolo.getPrezzo());
 			ps.setInt(2, articolo.getValutazione());
@@ -221,6 +221,22 @@ public class ArticoloDAO{
 		} catch(SQLException e) {
 			throw new RuntimeException(e);
 		}
+	}
+	
+	public int doRemoveArticolo(int codice) {
+		try (Connection con = ConPool.getConnection()) {
+            
+
+            PreparedStatement ps=con.prepareStatement("DELETE FROM articolo WHERE codice=?");
+
+         
+            ps.setInt(1,codice);
+
+            int x=ps.executeUpdate();
+            return x>0? 1:0;
+        } catch(SQLException e){
+            throw new RuntimeException(e);
+        }
 	}
 
 }

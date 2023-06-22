@@ -36,7 +36,7 @@ if(isAdmin==null||!isAdmin){
 				</div>
 				<div class="product">
 					<div class="product-img">
-						<a href="http://localhost:8080/PeekABook/ShowOrdini"><h1 style="font-weight: 500">Ordini</h1></a>
+						<a href="http://localhost:8080/PeekABook/Ordini"><h1 style="font-weight: 500">Ordini</h1></a>
 					</div>
 				</div>
 				<div class="product">

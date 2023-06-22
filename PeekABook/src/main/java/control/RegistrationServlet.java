@@ -42,7 +42,7 @@ public class RegistrationServlet extends HttpServlet{
 			
 			boolean duplicate = utenteDAO.doVerifyDuplicate(utente);
 			if(duplicate) {
-				RequestDispatcher dispatcher = request.getRequestDispatcher("error-registration.html");
+				response.sendRedirect("http://localhost:8080/PeekABook/registration-failed.jsp");
 				throw new IOException("Il nome utente è già occupato");
 			}
 			else {
@@ -56,14 +56,13 @@ public class RegistrationServlet extends HttpServlet{
 					session.setAttribute("utente", utente);
 					session.setAttribute("carrello", utente.getCarrello());
 				}
-			
-			RequestDispatcher dispatcher = request.getRequestDispatcher("success-registration.jsp");
+			log("registrazione avvenuta");
+			response.sendRedirect("http://localhost:8080/PeekABook/registration-success.jsp");
 			}
-			
 		}
 		
 		catch(Exception e) {
-			response.sendRedirect("http://localhost:8080/PeekABook/error-registration.html");
+			response.sendRedirect("http://localhost:8080/PeekABook/registration-failed.jsp");
 		}
 	}
 	

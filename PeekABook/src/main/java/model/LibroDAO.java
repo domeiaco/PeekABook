@@ -189,8 +189,9 @@ public class LibroDAO{
             ps.setLong(3, l.getIsbn());
             ps.setInt(4, l.getAnno());
             ps.setInt(5, l.getPagine());
-            ps.setString(6, l.getDescrizione());
-            ps.setInt(7,l.getCodice());
+            ps.setString(6, l.getEditore());
+            ps.setString(7, l.getDescrizione());
+            ps.setInt(8,l.getCodice());
 
             int x=ps.executeUpdate();
             return x>0? 1:0;
@@ -198,4 +199,26 @@ public class LibroDAO{
             throw new RuntimeException(e);
         }
     }
+	
+	public int doRemoveLibro(int codice) {
+		try (Connection con = ConPool.getConnection()) {
+            ArticoloDAO articoloDAO = new ArticoloDAO();
+            
+
+            PreparedStatement ps=con.prepareStatement("DELETE FROM genlibro WHERE libro=?");
+            ps.setInt(1,codice);
+            int x=ps.executeUpdate();
+            
+            ps=con.prepareStatement("DELETE FROM libro WHERE articolo=?");
+            ps.setInt(1, codice);
+
+            x+=ps.executeUpdate();
+
+            
+            x+=articoloDAO.doRemoveArticolo(codice);
+            return x>2? 1:0;
+        } catch(SQLException e){
+            throw new RuntimeException(e);
+        }
+	}
 }
