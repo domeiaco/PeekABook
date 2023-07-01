@@ -148,7 +148,7 @@ public class UtenteDAO{
 	public int doUpdateUtente(Utente u){
         try (Connection con = ConPool.getConnection()) {
 
-            PreparedStatement ps = con.prepareStatement("UPDATE Utente SET nome=?, cognome=?, via=?, civico=?, citta=?, cap=? WHERE id=?");
+            PreparedStatement ps = con.prepareStatement("UPDATE Utente SET nome=?, cognome=?, via=?, civico=?, citta=?, cap=?, email=? WHERE id=?");
 
             ps.setString(1, u.getNome());
             ps.setString(2, u.getCognome());
@@ -156,7 +156,8 @@ public class UtenteDAO{
             ps.setInt(4, u.getCivico());
             ps.setString(5, u.getCitta());
             ps.setInt(6, u.getCap());
-            ps.setInt(7, u.getId());
+            ps.setString(7, u.getEmail());
+            ps.setInt(8, u.getId());
 
             int rows= ps.executeUpdate();
 

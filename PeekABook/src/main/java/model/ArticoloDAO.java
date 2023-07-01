@@ -113,9 +113,9 @@ public class ArticoloDAO{
 		
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Articolo WHERE nome LIKE ? LIMIT ?,?");
 			ps.setString(1, "%"+nome+"%");
-			ps.setInt(2, limit);
-			ps.setInt(3, offset);
-		
+			ps.setInt(3, limit);
+			ps.setInt(2, offset);
+					
 			ResultSet rs = ps.executeQuery();
 			ArrayList<Articolo> articoli = new ArrayList<>();
 		
