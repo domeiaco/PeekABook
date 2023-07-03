@@ -23,7 +23,7 @@ public class ArticoloDAO{
 	
 	public int doUpdateQuantita(Articolo articolo, int quantita) {
 		try (Connection con = ConPool.getConnection()){
-			PreparedStatement ps = con.prepareStatement("UPDATE Articolo SET quantita=(quantita+?) WHERE codice=?");
+			PreparedStatement ps = con.prepareStatement("UPDATE Articolo SET quantita=(quantita-?) WHERE codice=?");
 			ps.setDouble(1, quantita);
 			ps.setInt(2, articolo.getCodice());
 			int x=ps.executeUpdate();

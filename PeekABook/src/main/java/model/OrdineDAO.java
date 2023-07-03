@@ -84,6 +84,12 @@ public class OrdineDAO{
 	
 	public int doSaveOrdine(Utente utente, Carrello carrello) {
 		try (Connection con = ConPool.getConnection()) {
+			ArticoloDAO articoloDAO= new ArticoloDAO();
+			Set<Articolo> keys = carrello.getArticoli().keySet();
+            int y=0;
+            for(Articolo key: keys) {
+                y+=articoloDAO.doUpdateQuantita(key, carrello.getArticoli().get(key));
+            }
 
             PreparedStatement ps = con.prepareStatement("INSERT INTO Ordine (utente,via,civico,citta,CAP,dataOrdine,dataConsegna,stato) VALUES (?,?,?,?,?,?,?,?)");
             ps.setInt(1, utente.getId());
