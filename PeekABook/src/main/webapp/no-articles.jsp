@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 
-<html>
+<html lang="it">
 <head>
     <meta charset="utf-8">
 	<title>Prodotti</title>

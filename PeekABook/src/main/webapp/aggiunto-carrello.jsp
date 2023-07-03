@@ -1,6 +1,6 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"%>
 
-<html>
+<html lang="it">
 <head>
 	<title>Aggiunto</title>
     <link rel="stylesheet" type="text/css" href="./css/display.css">
