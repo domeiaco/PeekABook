@@ -32,8 +32,9 @@ if(isAdmin==null||!isAdmin){
 				<label for="surname">Cognome</label>
 				<input type="text" placeholder="" id="surname" name="surname" onchange="validateFormElem(this, namePattern, document.getElementById('errorSurname'), nameErrorMessage)" />
 				<small id="errorSurname">Error message</small>
+			</div>
 			
-			<button type="submit" form="form">Registrati</button>
+			<button type="submit" form="form">Conferma</button>
 		</form>
 	</div>
 	

@@ -25,15 +25,5 @@ public class ShowGenere extends HttpServlet {
         dispatcher.forward(request, response);
 	}
 	
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String genere = request.getParameter("genere");
-		GenereDAO genereDAO = new GenereDAO();
-		Genere g = genereDAO.doRetrieveGenereByNome(genere);
-		LibroDAO libroDAO = new LibroDAO();
-		ArrayList<Libro> libri = libroDAO.doRetrieveLibroByGenere(g, 0, 100);
-		request.setAttribute("articoli", libri);
-		request.setAttribute("genere", g);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("show-genere.jsp");
-        dispatcher.forward(request, response);
-	}
+
 }
