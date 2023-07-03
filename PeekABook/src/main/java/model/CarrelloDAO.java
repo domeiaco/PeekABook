@@ -100,7 +100,6 @@ public class CarrelloDAO {
 		try (Connection con = ConPool.getConnection()) {
 
             PreparedStatement ps = con.prepareStatement("INSERT INTO Carrello(utente,totale,numeroArticoli) VALUES (?,?,?)");
-
             ps.setDouble(2, 0);
             ps.setInt(1, u.getId());
             ps.setInt(3, 0);

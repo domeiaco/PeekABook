@@ -5,12 +5,14 @@ import java.util.ArrayList;
 
 import javax.management.RuntimeErrorException;
 
+import com.mysql.cj.log.Log;
+
 public class UtenteDAO{
 	
-	public int doRetrieveIdByEmail(String email) {
+	public int doRetrieveIdByUsername(String user) {
 		try(Connection con = ConPool.getConnection()){
-			PreparedStatement ps = con.prepareStatement("SELECT id FROM Utente WHERE email=?");
-			ps.setString(1, email);
+			PreparedStatement ps = con.prepareStatement("SELECT id FROM Utente WHERE username=?");
+			ps.setString(1, user);
 			
 			ResultSet rs = ps.executeQuery();
 			int id=-1;

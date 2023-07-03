@@ -58,10 +58,10 @@ public class Utente {
 	
 	public void setPassword(String password) {
 		try {
-			MessageDigest digest = MessageDigest.getInstance("SHA-1");
+			MessageDigest digest = MessageDigest.getInstance("SHA-512");
 			digest.reset();
 			digest.update(password.getBytes(StandardCharsets.UTF_8));
-			this.password = String.format("%040x", new BigInteger(1,digest.digest()));
+			this.password = String.format("%0128x", new BigInteger(1,digest.digest()));
 		}
 		catch(NoSuchAlgorithmException e) {
 			throw new RuntimeException(e);
