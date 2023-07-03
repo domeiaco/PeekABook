@@ -26,7 +26,7 @@
 	<div class="card">
 		<div class="products">
 			<div class="product">
-				<img src="./images/${articolo.pathImg}">
+				<img alt="immagine prodotto" src="./images/${articolo.pathImg}">
 				<div class=product-info>
 					<h4 class="product-name">Nome: ${articolo.nome}</h4>
 					<h4 class="product-price">Massima quantità disponibile: ${articolo.quantita}</h4>

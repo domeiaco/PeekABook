@@ -41,7 +41,7 @@ if(isAdmin==null||!isAdmin){
 			<div class="products">
 				<c:forEach items="${articoli}" var="articolo">
 					<div class="product">
-						<img src="./images/${articolo.pathImg}">
+						<img alt="Immagine prodotto" src="./images/${articolo.pathImg}">
 						<div class="product-info">
 						<h3 class="product-name">Nome: ${articolo.nome}</h3>
 						<h4 class="product-price" style="margin-top: 20px">Codice: ${articolo.codice}</h4>

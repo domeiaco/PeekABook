@@ -12,7 +12,7 @@ const capErrorMessage = "Deve essere nel formato ##### (min='00001')";
 form.addEventListener('submit', e => {
     e.preventDefault();
 
-    var x = validate();
+    let x = validate();
 	
 	console.log(form.action);
 	
@@ -34,7 +34,7 @@ function validate(){
 	let smallCivico = document.getElementById("errorCivico");
 	
 	
-	var total = 0;
+	let total = 0;
 	
 	if(validateFormElem(form.name,namePattern,smallName,nameErrorMessage)){
 		total++;
