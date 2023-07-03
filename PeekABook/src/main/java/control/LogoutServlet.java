@@ -23,6 +23,6 @@ public class LogoutServlet extends HttpServlet{
 			session.invalidate();
 		}
 		
-		response.sendRedirect("http://localhost:8080/PeekABook/Home");;
+		response.sendRedirect("http://localhost:8080/PeekABook/Home");
 	}
 }

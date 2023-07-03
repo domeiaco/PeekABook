@@ -1,6 +1,5 @@
 package model;
 
-import java.util.ArrayList;
 
 public class Articolo {
 	private int codice;

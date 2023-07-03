@@ -47,8 +47,3 @@ public class ShowProduct extends HttpServlet {
         doGet(request, response);
     }
 }
-
-/*AutoreDAO autoreDAO = new AutoreDAO();
-Autore autore = autoreDAO.doRetrieveAutoreByLibro(l);
-l.setAutore(autore);
-l.setAutore(null);*/
