@@ -1,4 +1,4 @@
-const namePattern = /^[[A-Za-z]+[\s*[A-Za-z]+\s*[A-Za-z]*]*]{1,100}$/;
+const namePattern = /^[A-Za-z]{1,100}[\s*[A-Za-z]{0,100}\s*[A-Za-z]{0,100}]{0,100}$/;
 const emailPattern = /^\S+@\S+\.\S+$/;
 const civicoPattern = /^([0-9]+)$/;
 const capPattern= /^([\d]{5})$/;
