@@ -52,6 +52,7 @@ function select(element){
 
 function showSuggestions(list){
 	let listData;
+	let userValue;
     if(!list.length){
         userValue = inputBox.value;
         listData = `<li>${userValue}</li>`;

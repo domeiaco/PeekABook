@@ -1,5 +1,5 @@
 const namePattern = /^[A-Za-z]{1,100}[\s*[A-Za-z]{0,100}\s*[A-Za-z]{0,100}]{0,100}$/;
-const emailPattern = /^\S+@\S+\.\S+$/;
+const emailPattern = /^\S{1,30}@\S{1,30}\.\S{1,20}$/;
 const civicoPattern = /^([0-9]+)$/;
 const capPattern= /^([\d]{5})$/;
 
