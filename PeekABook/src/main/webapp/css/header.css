@@ -117,4 +117,25 @@ nav .menu-icon span{
     }
 }
 
+@media (max-width: 980px){
+    nav .menu-icon,
+    nav .cancel-icon{
+        margin: 0 20px;
+    }
+    nav form{
+        right: 30px;
+        z-index: 99;
+    }
+}
+@media (max-width: 503px){
+    nav .menu-icon,
+    nav .cancel-icon{
+        margin: 0 10px;
+        font-size: 16px;
+    }
+
+    nav .logo img{
+        display: none;
+    }
+}
 
