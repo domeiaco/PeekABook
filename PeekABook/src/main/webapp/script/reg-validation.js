@@ -1,13 +1,15 @@
 const namePattern = /^[A-Za-z]+[\s*[A-Za-z]+\s*[A-Za-z]*]*$/;
 const emailPattern = /^\S+@\S+\.\S+$/;
+const phonePattern = /^([0-9]{10})$/;
 const civicoPattern = /^([0-9]+)$/;
 const userPattern = /^[\w]+$/;
 const capPattern= /^([\d]{5})$/;
 
 const nameErrorMessage = "Può contenere solo lettere";
 const emailErrorMessage = "Deve essere nel formato username@domain.ext";
-const civicoErrorMessage = "Può contenere solo numeri (min='1')";
-const capErrorMessage = "Deve essere nel formato ##### (min='00001')";
+const phoneErrorMessage = "Deve essere nel formato ##########";
+const civicoErrorMessage = "Può contenere solo numeri";
+const capErrorMessage = "Deve essere nel formato #####";
 const usernameErrorMessage = "Può contenere solo caratteri alfanumerici";
 
 
@@ -25,6 +27,7 @@ form.addEventListener('submit', e => {
 
 
 function validate(){
+	let valid= true;
 	let form = document.getElementById("form");
 	let smallName = document.getElementById("errorName");
 	let smallSurname = document.getElementById("errorSurname");
@@ -79,11 +82,6 @@ function validate(){
 }
 
 function validateFormElem(formElem, pattern, span, message) {
-	if((formElem===form.cap&&formElem.value==="00000")||(formElem===form.address2&&formElem.value==="0")){
-		formElem.parentElement.className = 'form-control error';
-    	span.innerText = message;
-		return false;
-	}
 	if(!(formElem.value.match(pattern))||formElem.value===""){
 		formElem.parentElement.className = 'form-control error';
     	span.innerText = message;
