@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
-<html lang="it">
+<html>
 <head>
 	<title>Ordine completato</title>
 	<link rel="shortcut icon" href="./icons/favico.jpg" type="image/x-icon">

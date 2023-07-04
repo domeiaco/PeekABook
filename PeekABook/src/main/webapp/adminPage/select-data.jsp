@@ -3,7 +3,7 @@
 
 
 <!DOCTYPE html>
-<html lang="it"> 
+<html>
 <head>
 	<meta charset="UTF-8">
 	<title>Seleziona</title>
