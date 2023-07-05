@@ -9,6 +9,10 @@ import java.util.TimeZone;
 public class ConPool{
 	private static DataSource datasource;
 	
+	private ConPool() {
+	    throw new IllegalStateException("Utility class");
+	  }
+	
 	public static Connection getConnection() throws SQLException{
 		if(datasource == null) {
 			PoolProperties p = new PoolProperties();

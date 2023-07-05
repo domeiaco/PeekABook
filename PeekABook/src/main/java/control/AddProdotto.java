@@ -17,8 +17,8 @@ public class AddProdotto extends HttpServlet {
 		
 		AutoreDAO autoreDAO = new AutoreDAO();
 		GenereDAO genereDAO = new GenereDAO();
-		ArrayList<Autore> autori = autoreDAO.doRetrieveAutori(0, 1000);
-		ArrayList<Genere> generi = genereDAO.doRetrieveGeneri();
+		List<Autore> autori = autoreDAO.doRetrieveAutori(0, 1000);
+		List<Genere> generi = genereDAO.doRetrieveGeneri();
 		request.setAttribute("autori", autori);
 		request.setAttribute("generi", generi);
 		

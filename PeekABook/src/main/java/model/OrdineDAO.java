@@ -7,7 +7,7 @@ import java.util.*;
 
 public class OrdineDAO{
 	
-	public ArrayList<Ordine> doRetrieveOrdiniByUtente(Utente u){
+	public List<Ordine> doRetrieveOrdiniByUtente(Utente u){
 		try(Connection con = ConPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Ordine WHERE utente=?");
 			ps.setInt(1, u.getId());
@@ -35,7 +35,7 @@ public class OrdineDAO{
 		}
 	}
 	
-	public ArrayList<Ordine> doRetrieveAllOrdini(int offset, int limit){
+	public List<Ordine> doRetrieveAllOrdini(int offset, int limit){
 		try (Connection con = ConPool.getConnection()) {
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Ordine LIMIT ?,?");
 			ps.setInt(1, offset);
@@ -105,7 +105,7 @@ public class OrdineDAO{
             CarrelloDAO c = new CarrelloDAO();
             int x = c.doClearCarrello(utente);
             
-            return (rows>0 && x>0)==true ? 1:0;
+            return (rows>0 && x>0 && y>0) ? 1:0;
 
         }
         catch (SQLException e){
@@ -136,7 +136,7 @@ public class OrdineDAO{
 		}
 	}
 	
-	public ArrayList<Ordine> doRetrieveOrdiniByData(Date start, Date end){
+	public List<Ordine> doRetrieveOrdiniByData(Date start, Date end){
 		try(Connection con = ConPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Ordine WHERE dataordine BETWEEN ? AND ?;");
 			ps.setDate(1, start);

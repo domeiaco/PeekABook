@@ -33,7 +33,7 @@ public class Aggiorna extends HttpServlet {
 		
 		libroDAO.doUpdateLibro(libro);
 		
-		 ArrayList<Libro> articoli = libroDAO.doRetrieveLibro(0, 1000);
+		 List<Libro> articoli = libroDAO.doRetrieveLibro(0, 1000);
 		 request.setAttribute("articoli", articoli);
 	     RequestDispatcher dispatcher = request.getRequestDispatcher("adminPage/show-articoli.jsp");
 	     dispatcher.forward(request, response);
@@ -41,7 +41,6 @@ public class Aggiorna extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doPost(request, response);
 	}
 

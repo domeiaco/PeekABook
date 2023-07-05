@@ -11,6 +11,7 @@ import model.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/InsertAutore")
 public class InsertAutore extends HttpServlet {
@@ -24,7 +25,7 @@ public class InsertAutore extends HttpServlet {
 		autore.setNome(nome);
 		autore.setCognome(cognome);
 		autoreDAO.doSaveAutore(autore);
-		ArrayList<Autore> autori = autoreDAO.doRetrieveAutori(0, 1000);
+		List<Autore> autori = autoreDAO.doRetrieveAutori(0, 1000);
 		request.setAttribute("autori", autori);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("adminPage/show-autori.jsp");
 		dispatcher.forward(request, response);

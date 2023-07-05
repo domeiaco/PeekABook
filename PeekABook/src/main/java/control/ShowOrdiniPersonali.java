@@ -2,6 +2,7 @@ package control;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -27,7 +28,7 @@ public class ShowOrdiniPersonali extends HttpServlet {
 			u= (Utente) session.getAttribute("utente");
 		}
 		OrdineDAO ordineDAO = new OrdineDAO();
-		ArrayList<Ordine> ordini = ordineDAO.doRetrieveOrdiniByUtente(u);
+		List<Ordine> ordini = ordineDAO.doRetrieveOrdiniByUtente(u);
 		request.setAttribute("ordini", ordini);
 		request.setAttribute("numeroOrdini", ordini.size());
 

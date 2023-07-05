@@ -25,13 +25,13 @@ inputBox.onkeyup = (e)=>{
 			return data.toLocaleLowerCase().includes(userData.toLocaleLowerCase());
 		});
 		emptyArray = emptyArray.map((data)=>{
-			return data = `<li>${data}</li>`;
+			return `<li>${data}</li>`;
 		});
 		searchWrapper.classList.add("active");
 		showSuggestions(emptyArray);
 		let allList = suggBox.querySelectorAll("li");
-		for(let i=0; i<allList.length;i++){
-			allList[i].setAttribute("onclick", "select(this)");
+		for(let value of allList){
+			value.setAttribute("onclick", "select(this)");
 		}
 	}
 	else{

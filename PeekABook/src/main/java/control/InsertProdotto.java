@@ -28,7 +28,6 @@ public class InsertProdotto extends HttpServlet {
         String gen = request.getParameter("genere");
         Integer rating = Integer.parseInt(request.getParameter("rating"));
        
-		AutoreDAO autoreDAO = new AutoreDAO();
 		Autore autore = new Autore();
 		autore.setCodice(codAutore);
 

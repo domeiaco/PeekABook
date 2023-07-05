@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 
 @WebServlet("/Checkout")
@@ -26,13 +27,15 @@ public class Checkout extends HttpServlet {
 			LinkedHashMap<Articolo, Integer> articoliOrdine = carrello.getArticoli();
 			ArticoloDAO articoloDAO = new ArticoloDAO();
 			int flag= 1;
-			for(Articolo a : articoliOrdine.keySet()) {
+			for(Map.Entry<Articolo,Integer> m : articoliOrdine.entrySet()) {
+				Articolo a = m.getKey();
 				Articolo x = articoloDAO.doRetrieveArticoliByCodice(a.getCodice());
-				if(x.getQuantita()<articoliOrdine.get(a) || articoliOrdine.get(a)<1) {
+				if(x.getQuantita()<m.getValue() || m.getValue()<1) {				
 					flag=0;
 					request.setAttribute("articolo", x);
 					RequestDispatcher dispatcher = request.getRequestDispatcher("order-failed.jsp");
 					dispatcher.forward(request, response);
+					return;
 				}
 			}
 			if(flag==1) {

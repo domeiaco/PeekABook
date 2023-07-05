@@ -4,6 +4,7 @@ import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Utente {
 	private int id;
@@ -17,7 +18,7 @@ public class Utente {
 	private String citta;
 	private int cap;
 	private int admin;
-	private ArrayList<Ordine> ordini;
+	private List<Ordine> ordini;
 	private Carrello carrello;
 	
 	public Carrello getCarrello() {
@@ -28,11 +29,11 @@ public class Utente {
 		this.carrello = carrello;
 	}
 	
-	public ArrayList<Ordine> getOrdini(){
+	public List<Ordine> getOrdini(){
 		return ordini;
 	}
 	
-	public void setOrdini(ArrayList<Ordine> ordini) {
+	public void setOrdini(List<Ordine> ordini) {
 		this.ordini = ordini;
 	}
 	

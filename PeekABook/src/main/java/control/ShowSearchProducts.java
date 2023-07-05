@@ -2,6 +2,7 @@ package control;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -20,9 +21,9 @@ public class ShowSearchProducts extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String nome= request.getParameter("nome");
 		ArticoloDAO articoloDAO = new ArticoloDAO();
-		ArrayList<Articolo> articoli = articoloDAO.doRetrieveArticoliByNomeLike(nome, 0, 20);
+		List<Articolo> articoli = articoloDAO.doRetrieveArticoliByNomeLike(nome, 0, 20);
 		
-		if(articoli.size()==0) {
+		if(articoli.isEmpty()) {
 			RequestDispatcher dispatcher = request.getRequestDispatcher("no-articles.jsp");
 	        dispatcher.forward(request, response);
 		}

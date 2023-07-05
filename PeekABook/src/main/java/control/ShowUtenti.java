@@ -3,6 +3,8 @@ package control;
 import model.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +21,7 @@ public class ShowUtenti extends HttpServlet{
 		HttpSession session = request.getSession();
 		Utente adm = null;
 		adm = (Utente) session.getAttribute("utente");
-		ArrayList<Utente> utenti = utenteDAO.doRetrieveAllUtenti(adm, 0, 1000);
+		List<Utente> utenti = utenteDAO.doRetrieveAllUtenti(adm, 0, 1000);
 		
 		request.setAttribute("utenti", utenti);
 		request.setAttribute("numeroUtenti", utenti.size());

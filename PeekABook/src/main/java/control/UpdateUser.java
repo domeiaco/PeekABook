@@ -29,7 +29,7 @@ public class UpdateUser extends HttpServlet{
 			Utente utente= null;
 			HttpSession session = request.getSession();
 			synchronized (session) {
-				utente = (Utente) session.getAttribute("utente");;
+				utente = (Utente) session.getAttribute("utente");
 				utente.setEmail(email);
 				utente.setCitta(citta);
 				utente.setCivico(civico);

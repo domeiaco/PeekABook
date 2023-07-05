@@ -3,6 +3,8 @@ package control;
 import model.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +19,7 @@ public class ShowOrdini extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		OrdineDAO ordineDAO = new OrdineDAO();
-		ArrayList<Ordine> ordini = ordineDAO.doRetrieveAllOrdini(0, 1000);
+		List<Ordine> ordini = ordineDAO.doRetrieveAllOrdini(0, 1000);
 		
 		request.setAttribute("ordini", ordini);
 		request.setAttribute("numeroOrdini", ordini.size());

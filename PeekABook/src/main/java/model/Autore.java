@@ -1,12 +1,13 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Autore{
 	private int codice;
 	private String nome;
 	private String cognome;
-	private ArrayList<Libro> libri;
+	private List<Libro> libri;
 	
 	public int getCodice() {
 		return codice;
@@ -32,11 +33,11 @@ public class Autore{
 		this.cognome = cognome;
 	}
 	
-	public ArrayList<Libro> getLibri(){
+	public List<Libro> getLibri(){
 		return libri;
 	}
 	
-	public void setLibri(ArrayList<Libro> libri) {
+	public void setLibri(List<Libro> libri) {
 		this.libri = libri;
 	}
 }

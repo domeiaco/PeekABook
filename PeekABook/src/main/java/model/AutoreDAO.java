@@ -2,9 +2,10 @@ package model;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AutoreDAO {
-	public ArrayList<Autore> doRetrieveAutori(int limit, int offset){
+	public List<Autore> doRetrieveAutori(int limit, int offset){
 		try(Connection con = ConPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Autore LIMIT ?,?");
 			

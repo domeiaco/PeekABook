@@ -1,10 +1,11 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Genere{
 	private String nome;
-	private ArrayList<Libro> libri;
+	private List<Libro> libri;
 	
 	public String getNome() {
 		return nome;
@@ -14,11 +15,11 @@ public class Genere{
 		this.nome = nome;
 	}
 	
-	public ArrayList<Libro> getLibri(){
+	public List<Libro> getLibri(){
 		return libri;
 	}
 	
-	public void setLibri(ArrayList<Libro> libri) {
+	public void setLibri(List<Libro> libri) {
 		this.libri = libri;
 	}
 }

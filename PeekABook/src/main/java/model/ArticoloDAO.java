@@ -81,7 +81,7 @@ public class ArticoloDAO{
 		}
 	}
 	
-	public ArrayList<Articolo> doRetrieveArticoli(int limit, int offset){
+	public List<Articolo> doRetrieveArticoli(int limit, int offset){
 		try(Connection con = ConPool.getConnection()){
 			
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Articolo LIMIT ?,?");
@@ -108,7 +108,7 @@ public class ArticoloDAO{
 	}
 
 
-	public ArrayList<Articolo> doRetrieveArticoliByNomeLike(String nome, int offset, int limit){
+	public List<Articolo> doRetrieveArticoliByNomeLike(String nome, int offset, int limit){
 		try(Connection con = ConPool.getConnection()){
 		
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Articolo WHERE nome LIKE ? LIMIT ?,?");
@@ -153,7 +153,7 @@ public class ArticoloDAO{
 		}
 	}
 	
-	public ArrayList<Articolo> doRetrieveArticoliByValutazione(int limit, int offset){
+	public List<Articolo> doRetrieveArticoliByValutazione(int limit, int offset){
 		try(Connection con = ConPool.getConnection()){
 			
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Articolo ORDER BY valutazione DESC LIMIT ?,?");
@@ -196,7 +196,7 @@ public class ArticoloDAO{
         }
     }
 	
-	public ArrayList<Articolo> doRetrieveArticoliByNome(String nome, int limit, int offset){
+	public List<Articolo> doRetrieveArticoliByNome(String nome, int limit, int offset){
 		try(Connection con = ConPool.getConnection()){
 			
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Articolo WHERE nome=? LIMIT ?,?");

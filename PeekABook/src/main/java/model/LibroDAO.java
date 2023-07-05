@@ -2,9 +2,10 @@ package model;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class LibroDAO{
-	public ArrayList<Libro> doRetrieveLibro(int limit, int offset){
+	public List<Libro> doRetrieveLibro(int limit, int offset){
 		try(Connection con = ConPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Libro l JOIN Articolo a ON a.codice=l.articolo LIMIT ?,?");
 			ps.setInt(1, limit);
@@ -67,7 +68,7 @@ public class LibroDAO{
 			throw new RuntimeException(e);
 		}
 	}
-	public ArrayList<Libro> doRetrieveLibroByGenere(Genere genere, int limit, int offset){
+	public List<Libro> doRetrieveLibroByGenere(Genere genere, int limit, int offset){
 		try(Connection con = ConPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Libro l, Articolo a, GenLibro g WHERE l.articolo=a.codice AND g.genere=? AND g.libro=l.articolo LIMIT ?,?");
 			ps.setString(1, genere.getNome());
@@ -100,7 +101,7 @@ public class LibroDAO{
 			throw new RuntimeException(e);
 		}
 	}
-	public ArrayList<Libro> doRetrieveOtherLibriByGenere(Genere genere, Libro l1, int limit, int offset){
+	public List<Libro> doRetrieveOtherLibriByGenere(Genere genere, Libro l1, int limit, int offset){
 		try(Connection con = ConPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Libro l, Articolo a, GenLibro g WHERE l.articolo=a.codice AND l.articolo=g.libro AND g.genere=? AND a.codice!=? ORDER BY a.valutazione DESC LIMIT ?,?");
 			ps.setString(1, genere.getNome());
@@ -138,7 +139,7 @@ public class LibroDAO{
 	public int doSaveLibro(Libro l) {
 		try (Connection con = ConPool.getConnection()){
 			ArticoloDAO articoloDAO = new ArticoloDAO();
-			int z=articoloDAO.doSaveArticolo(l);
+			articoloDAO.doSaveArticolo(l);
 			PreparedStatement ps = con.prepareStatement("INSERT INTO Libro(autore, titolo, ISBN, anno, pagine, editore, descrizione) VALUES(?,?,?,?,?,?,?)");
 			ps.setInt(1, l.getAutore().getCodice());
 			ps.setString(2, l.getTitolo());
@@ -180,7 +181,7 @@ public class LibroDAO{
 	public int doUpdateLibro(Libro l){
         try (Connection con = ConPool.getConnection()) {
             ArticoloDAO articoloDAO = new ArticoloDAO();
-            int z=articoloDAO.doUpdateArticolo(l);
+            articoloDAO.doUpdateArticolo(l);
 
             PreparedStatement ps=con.prepareStatement("UPDATE Libro SET autore=?, titolo=?, ISBN=?, anno=?, pagine=?, editore=?, descrizione=? WHERE articolo=?");
 

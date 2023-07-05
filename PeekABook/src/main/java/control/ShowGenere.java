@@ -2,6 +2,7 @@ package control;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,7 +19,7 @@ public class ShowGenere extends HttpServlet {
 		GenereDAO genereDAO = new GenereDAO();
 		Genere g = genereDAO.doRetrieveGenereByNome(genere);
 		LibroDAO libroDAO = new LibroDAO();
-		ArrayList<Libro> libri = libroDAO.doRetrieveLibroByGenere(g, 0, 100);
+		List<Libro> libri = libroDAO.doRetrieveLibroByGenere(g, 0, 100);
 		request.setAttribute("articoli", libri);
 		request.setAttribute("genere", g);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("show-genere.jsp");

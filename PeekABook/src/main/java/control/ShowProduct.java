@@ -2,6 +2,7 @@ package control;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.annotation.WebServlet;
@@ -18,7 +19,7 @@ public class ShowProduct extends HttpServlet {
 		String nome = request.getParameter("nome");
 		ArticoloDAO articoloDAO = new ArticoloDAO();
 		LibroDAO libroDAO = new LibroDAO();
-		ArrayList<Articolo> articoli = articoloDAO.doRetrieveArticoliByNome(nome, 0, 1);
+		List<Articolo> articoli = articoloDAO.doRetrieveArticoliByNome(nome, 0, 1);
 		Articolo a = articoli.get(0);
 		Libro l = libroDAO.doRetrieveLibroByArticolo(a.getCodice());
 		
@@ -30,7 +31,7 @@ public class ShowProduct extends HttpServlet {
 		
 		GenereDAO genereDAO = new GenereDAO();
 		Genere genere = genereDAO.doRetrieveGenereByLibro(l);
-		ArrayList<Libro> libri = libroDAO.doRetrieveOtherLibriByGenere(genere, l, 0, 4);
+		List<Libro> libri = libroDAO.doRetrieveOtherLibriByGenere(genere, l, 0, 4);
 		ArrayList<Articolo> consigliati = new ArrayList<>();
 		for(Libro lib : libri) {
 			consigliati.add(lib);

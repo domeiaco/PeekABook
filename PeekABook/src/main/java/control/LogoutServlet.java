@@ -17,7 +17,6 @@ public class LogoutServlet extends HttpServlet{
 		HttpSession session = request.getSession();
 		synchronized (session){
 			CarrelloDAO carrelloDAO = new CarrelloDAO(); 
-			Utente u = (Utente) session.getAttribute("utente");
 			Carrello c = (Carrello) session.getAttribute("carrello");
 			carrelloDAO.doUpdateCarrello(c);
 			session.invalidate();

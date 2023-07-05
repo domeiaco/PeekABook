@@ -2,6 +2,7 @@ package model;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.management.RuntimeErrorException;
 
@@ -83,7 +84,7 @@ public class UtenteDAO{
 		}
 	}
 	
-	public ArrayList<Utente> doRetrieveAllUtenti(Utente adm, int limit, int offset){
+	public List<Utente> doRetrieveAllUtenti(Utente adm, int limit, int offset){
 		try(Connection con = ConPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Utente WHERE id!=? LIMIT ?,?");
 			ps.setInt(1, adm.getId());

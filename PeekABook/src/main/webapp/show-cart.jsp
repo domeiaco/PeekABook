@@ -40,7 +40,7 @@
 					<c:otherwise>
 						<c:forEach items="${carrello.innerArticoli}" var="prodotto">
 							<div class="product">
-								<img src="./images/${prodotto.pathImg}">
+								<img alt="immagine prodotto" src="./images/${prodotto.pathImg}">
 								<div class="product-info">
 									<h3 class="product-name">${prodotto.nome}</h3>
 									<h4 class="product-price">Prezzo: €${prodotto.prezzo * carrello.articoli[prodotto] }</h4>

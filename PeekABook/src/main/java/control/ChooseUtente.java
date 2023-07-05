@@ -13,6 +13,7 @@ import model.UtenteDAO;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/ChooseUtente")
 public class ChooseUtente extends HttpServlet {
@@ -21,7 +22,7 @@ public class ChooseUtente extends HttpServlet {
 		UtenteDAO utenteDAO = new UtenteDAO();
 		HttpSession session = request.getSession();
 		Utente adm = (Utente) (session.getAttribute("utente"));
-		ArrayList<Utente> utenti = utenteDAO.doRetrieveAllUtenti(adm,0,1000);
+		List<Utente> utenti = utenteDAO.doRetrieveAllUtenti(adm,0,1000);
 		request.setAttribute("utenti", utenti);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("adminPage/select-utente.jsp");
         dispatcher.forward(request, response);

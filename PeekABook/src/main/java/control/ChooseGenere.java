@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.rmi.ServerException;
 import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet ("/ChooseGenere")
 
@@ -18,7 +19,7 @@ public class ChooseGenere extends HttpServlet{
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		GenereDAO genereDAO = new GenereDAO();
-		ArrayList<Genere> generi = genereDAO.doRetrieveGeneri();
+		List<Genere> generi = genereDAO.doRetrieveGeneri();
 		request.setAttribute("generi", generi);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("choose-genere.jsp");
         dispatcher.forward(request, response);
@@ -27,7 +28,7 @@ public class ChooseGenere extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		GenereDAO genereDAO = new GenereDAO();
-		ArrayList<Genere> generi = genereDAO.doRetrieveGeneri();
+		List<Genere> generi = genereDAO.doRetrieveGeneri();
 		request.setAttribute("generi", generi);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("choose-genere.jsp");
         dispatcher.forward(request, response);

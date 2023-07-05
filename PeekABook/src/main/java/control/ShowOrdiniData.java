@@ -4,6 +4,8 @@ import model.*;
 import java.io.IOException;
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,7 +24,7 @@ public class ShowOrdiniData extends HttpServlet{
 		Date start = Date.valueOf(request.getParameter("startDate"));
 		Date end = Date.valueOf(request.getParameter("endDate"));
 		
-		ArrayList<Ordine> ordini = ordineDAO.doRetrieveOrdiniByData(start, end);
+		List<Ordine> ordini = ordineDAO.doRetrieveOrdiniByData(start, end);
 		
 		request.setAttribute("ordini", ordini);
 		request.setAttribute("numeroOrdini", ordini.size());

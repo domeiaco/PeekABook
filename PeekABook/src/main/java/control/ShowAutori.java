@@ -11,12 +11,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/ShowAutori")
 public class ShowAutori extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
         AutoreDAO autoreDAO= new AutoreDAO();
-        ArrayList<Autore> autori = autoreDAO.doRetrieveAutori(0, 1000);
+        List<Autore> autori = autoreDAO.doRetrieveAutori(0, 1000);
         request.setAttribute("autori", autori);
         RequestDispatcher dispatcher = request.getRequestDispatcher("adminPage/show-autori.jsp");
         dispatcher.forward(request, response);

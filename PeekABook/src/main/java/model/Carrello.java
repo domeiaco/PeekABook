@@ -42,21 +42,20 @@ public class Carrello {
 	}
 	
 	public Set<Articolo> getInnerArticoli(){
-		Set<Articolo> innerArticoli = articoli.keySet();
-		return innerArticoli;
+		return articoli.keySet();
 	}
 	
 	public void setArticoli(LinkedHashMap<Articolo, Integer> articoli) {
 		this.articoli = articoli;
 		Set<Articolo> keys = articoli.keySet();
-		double totale=0;
+		double tot=0;
 		int num=0;
 		for(Articolo key : keys) {
-			totale+=((key.getPrezzo())*articoli.get(key));
+			tot+=((key.getPrezzo())*articoli.get(key));
 			num = num+articoli.get(key); 
 		}
-		totale = Math.round(totale * 100.0) / 100.0;
-		setTotale(totale);
+		tot = Math.round(tot * 100.0) / 100.0;
+		setTotale(tot);
 		setNumeroArticoli(num);
 	}
 	

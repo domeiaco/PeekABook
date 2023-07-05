@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.rmi.ServerException;
 import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet("/ShowAll")
 
@@ -18,7 +19,7 @@ public class ShowAll extends HttpServlet{
 public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		ArticoloDAO articoloDAO = new ArticoloDAO();
-		ArrayList<Articolo> articoli = articoloDAO.doRetrieveArticoli(0, 100);
+		List<Articolo> articoli = articoloDAO.doRetrieveArticoli(0, 100);
 		
 		request.setAttribute("articoli", articoli);
 		

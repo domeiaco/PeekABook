@@ -2,9 +2,10 @@ package model;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.List;
 
 public class GenereDAO{
-	public ArrayList<Genere> doRetrieveGeneri(){
+	public List<Genere> doRetrieveGeneri(){
 		try(Connection con = ConPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("SELECT Nome FROM Genere");
 			ArrayList<Genere> generi = new ArrayList<>();

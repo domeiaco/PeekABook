@@ -2,6 +2,7 @@ package control;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,7 +20,7 @@ public class SearchAjax extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArticoloDAO articoloDAO = new ArticoloDAO();
-		ArrayList<Articolo> articoli = articoloDAO.doRetrieveArticoli(0, 1000);
+		List<Articolo> articoli = articoloDAO.doRetrieveArticoli(0, 1000);
 		ArrayList<String> nomi = new ArrayList<>();
 		for(Articolo a: articoli) {
 			nomi.add(a.getNome());
@@ -30,7 +31,7 @@ public class SearchAjax extends HttpServlet {
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ArticoloDAO articoloDAO = new ArticoloDAO();
-		ArrayList<Articolo> articoli = articoloDAO.doRetrieveArticoli(0, 1000);
+		List<Articolo> articoli = articoloDAO.doRetrieveArticoli(0, 1000);
 		ArrayList<String> nomi = new ArrayList<>();
 		for(Articolo a: articoli) {
 			nomi.add(a.getNome());

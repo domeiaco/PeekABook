@@ -1,7 +1,7 @@
 const namePattern = /^[A-Za-z]{1,100}[\s*[A-Za-z]{0,100}\s*[A-Za-z]{0,100}]{0,100}$/;
 const emailPattern = /^\S{1,30}@\S{1,30}\.\S{1,20}$/;
-const civicoPattern = /^([0-9]+)$/;
-const capPattern= /^([\d]{5})$/;
+const civicoPattern = /^(\d+)$/;
+const capPattern= /^(\d{5})$/;
 
 const nameErrorMessage = "Può contenere solo lettere";
 const emailErrorMessage = "Deve essere nel formato username@domain.ext";
@@ -23,7 +23,6 @@ form.addEventListener('submit', e => {
 
 
 function validate(){
-	let valid= true;
 	let form = document.getElementById("form");
 	let smallName = document.getElementById("errorName");
 	let smallSurname = document.getElementById("errorSurname");
