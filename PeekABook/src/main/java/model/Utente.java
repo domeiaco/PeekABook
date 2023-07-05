@@ -3,7 +3,6 @@ package model;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Utente {

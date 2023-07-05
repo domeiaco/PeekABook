@@ -31,7 +31,6 @@ public class Checkout extends HttpServlet {
 				Articolo a = m.getKey();
 				Articolo x = articoloDAO.doRetrieveArticoliByCodice(a.getCodice());
 				if(x.getQuantita()<m.getValue() || m.getValue()<1) {				
-					flag=0;
 					request.setAttribute("articolo", x);
 					RequestDispatcher dispatcher = request.getRequestDispatcher("order-failed.jsp");
 					dispatcher.forward(request, response);
