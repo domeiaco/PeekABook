@@ -68,7 +68,7 @@ foreign key(articolo) references Articolo(codice) on update cascade on delete ca
 foreign key(autore) references Autore(codiceAutore) on update cascade on delete cascade);
 
 CREATE TABLE Genere(
-nome varchar(30) primary key);
+nome varchar2(30) primary key);
 
 CREATE TABLE GenLibro(
 libro int,
