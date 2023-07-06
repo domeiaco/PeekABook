@@ -122,16 +122,17 @@ body{
 }
 
 @media screen and (max-width: 700px) {
-    .remove {
-        display: none;
-    }
+	
+	.remove{
+		display: inline;
+	}
 
     .product {
-        height: 150px;
+        height: 200px;
     }
     
     .product >img {
-    height:150px;
+    height:200px;
     width:200px;
     }
     
