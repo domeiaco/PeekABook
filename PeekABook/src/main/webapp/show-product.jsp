@@ -77,7 +77,7 @@
 				<c:forEach items="${consigliati}" var="consigliato">
 					<div class="product">
 						<div class="product-img">
-							<img alt="product image" src="./images/${consigliato.pathImg}" onclick="document.location='http://localhost:8080/PeekABook/ShowProduct?nome='+this.name;">
+							<img alt="${consigliato.nome }" src="./images/${consigliato.pathImg}" name="${consigliato.nome }" onclick="document.location='http://localhost:8080/PeekABook/ShowProduct?nome='+this.alt;">
 						</div>
 						<div class=product-info>
 							<div class=product-info-top>
