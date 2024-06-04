@@ -6,6 +6,8 @@ public class Articolo {
 	private double prezzo;
 	private int quantita;
 	private String pathImg;
+	private int valutazione;
+
 	
 	public int getCodice() {
 		return codice;
@@ -47,4 +49,11 @@ public class Articolo {
         this.pathImg = pathImg;
     }
     
+    public int getValutazione() {
+        return valutazione;
+    }
+
+    public void setValutazione(int valutazione) {
+        this.valutazione = valutazione;
+    }
 }
