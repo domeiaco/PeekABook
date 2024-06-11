@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+	<meta charset="UTF-8">
+	<title>Registrazione</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="header">
+			<h2>Registrazione</h2>
+		</div>
+		<form  class="form" id="form" method="post" action="RegistrationServlet" >
+			<div class="form-control">
+				<label for="username">Username</label>
+				<input type="text" placeholder="" id="username" name="username"/>
+				<small id="errorUsername">Error message</small>
+			</div>
+			<div class="form-control">
+				<label for="email">Email</label>
+				<input type="email" placeholder="" id="email" name="email"/>
+				<small id="errorEmail" style="font-size:0.8rem">Error message</small>
+			</div>
+			<div class="form-control">
+				<label for="password">Password</label>
+				<input type="password" placeholder="" id="password" name="password"/>
+				<small id="errorPassword">Error message</small>
+			</div>
+			<div class="form-control">
+				<label for="name">Nome</label>
+				<input type="text" placeholder="" id="name" name="name"/>
+				<small id="errorName">Error message</small>
+			</div>
+			<div class="form-control">
+				<label for="surname">Cognome</label>
+				<input type="text" placeholder="" id="surname" name="surname"/>
+				<small id="errorSurname">Error message</small>
+			</div>
+			<div class="form-control">
+				<label for="address">Via</label>
+				<input type="text" placeholder="" id="address" name="address"/>
+				<small id="errorVia"></small>
+			</div>
+			<div class="form-control">
+				<label for="address2">Civico</label>
+				<input type="number" placeholder="" id="address2" name="address2"/>
+				<small id="errorCivico">Error message</small>
+			</div>
+			<div class="form-control">
+				<label for="address3">Città</label>
+				<input type="text" placeholder="" id="address3" name="address3"/>
+				<small id="errorCitta">Error message</small>
+			</div>
+			<div class="form-control">
+				<label for="address">CAP</label>
+				<input type="number" placeholder="" id="cap" name="cap" min="00001" max="99999"/>
+				<small id="errorCap">Error message</small>
+			</div>
+			<button type="submit" form="form">Registrati</button>
+		</form>
+	</div>
+</body>
+</html>
