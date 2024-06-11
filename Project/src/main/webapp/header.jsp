@@ -1,13 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
 <title>Header</title>
 <link rel="stylesheet" href="./css/header.css">
+<link rel="stylesheet" href="./css/search.css">
 <link rel="shortcut icon" href="./icons/favico.png" type=image/x-icon>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/7c496c47e4.js" crossorigin="anonymous"></script>
@@ -59,6 +59,16 @@
 			</ul>
 			</c:otherwise>
 		</c:choose>
+	</div>
+	<div class="wrapper">
+		<div class="search-input">
+			<a href="" hidden></a>
+			<input type="text" placeholder="Cerca un libro...">
+			<div class="autocom-box">
+			
+			</div>
+			<div class="icon"><i class="fas fa-search"></i></div>
+		</div>
 	</div>
 </nav>
 </body>

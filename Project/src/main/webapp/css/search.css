@@ -1,0 +1,48 @@
+@charset "ISO-8859-1";
+
+.wrapper{
+	max-width: 100px;
+	margin: auto;
+}
+
+.wrapper .search-input{
+	background: white;
+	width: 25%;
+	border-radius: 5px;
+	position: absolute;
+	margin: auto;
+	top: 7px;
+	right: 30px;
+}
+
+.search-input input{
+	height: 55px;
+	width: 100%;
+	outline: noe;
+	border: none;
+	border-radius: 5px;
+	padding: 0 60px 0 20px;
+	font-size: 18px;
+}
+
+.search-input .autocom-box{
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 280px;
+    overflow-y: auto;
+}
+
+
+.search-input .icon{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    line-height: 55px;
+    font-size: 20px;
+    color: #1e7682;
+    cursor: pointer;
+}
