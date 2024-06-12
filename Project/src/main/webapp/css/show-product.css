@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
+
+*{
+	box-sizing: border-box;
+	padding:0;
+	margin:0;
+	font-family: "Montserrat", sans-serif;
+}
+
+body{
+	line-height: 1.5;
+	overflow-x: hidden;
+}
+
+.card-wrapper{
+	max-width: 1100px;
+	margin: 0 auto;
+	height: 125vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+img{
+	width: fit-content;
+	display: block;
+	max-height: 800px;
+}
+
+.img-showcase{
+	overflow: hidden;
+	display: flex;
+	width: 100%;
+	transition: all 0.5 ease;
+}
+
+.img-showcase img{
+	min-width: fit-content;
+}
+
+.product-content{
+	padding: 2rem 1rem;
+}
+
+.product-title{
+	font-size: 2rem;
+	text-transform: capitalize;
+	font-weight: 700;
+	position: relative;
+	color: #0e4950;
+	margin: 1rem 0;
+}
+
+.product-rating{
+	color: #0e4950;
+}
+
+.product-rating span{
+	font-weight: 600;
+	color: black;
+}
+
+.product-price{
+	margin: 1rem 0;
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+.product-price span{
+	font-weight: 400;
+}
+
+.price span{
+	color: #1e7682;
+}
+
+.product-detail h2{
+	text-transform: capitalize;
+	color: #0e4950;
+	padding-bottom: 0.6rem;
+}
+
+.product-detail p{
+	font-size: 0.9rem;
+	padding: 0.3rem;
+	opacity: 0.8;
+	max-height: 14ch;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.product-detail ul{
+	margin: 1rem 0;
+	font-size: 0.9rem;
+}
+
+.product-detail ul li{
+	list-style: none;
+	background-size: 18px;
+	padding-left: 7px;
+	margin: 0.4rem 0;
+	font-weight: 600;
+	opacity: 0.9; 
+}
+
+.product-detail ul li span{
+	font-weight: 400;
+}
+
+.purchase-info{
+	margin: 1.5rem 0;
+}
+
+.purchase-info input,
+.purchase-info .btn{
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+}
+.purchase-info input{
+    width: 60px;
+}
+.purchase-info .btn{
+    cursor: pointer;
+    color: #fff;
+    background: #1e7682;
+    
+}
+
+.purchase-info .btn:hover{
+    opacity: 0.9;
+}
+
+.card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+    
+   .product-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product-content{
+        padding-top: 0;
+    }

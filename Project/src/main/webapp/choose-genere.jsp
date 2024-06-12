@@ -6,12 +6,13 @@
 <html lang="it">
 <head>
 	<meta charset="utf-8">
-	<title>Prodotti</title>
+	<title>Generi</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://kit.fontawesome.com/7c496c47e4.js" crossorigin="anonymous"></script>
 	<link rel="shortcut icon" href="./icons/favico.jpg" type="image/x-icon">
 	<link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/items-basic.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
