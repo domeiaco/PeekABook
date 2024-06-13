@@ -5,6 +5,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Error</title>
+	<link rel="stylesheet" href="./css/items.css">
+    <link rel="shortcut icon" href="./icons/favico.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/footer1.css">
 </head>
 
 <body>

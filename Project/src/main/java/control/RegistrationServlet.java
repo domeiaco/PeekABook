@@ -44,6 +44,18 @@ public class RegistrationServlet extends HttpServlet{
 			if(duplicate) {
 				response.sendRedirect("http://localhost:8080/PeekABook/registration-failed.jsp");
 			}
+			else {
+				utenteDAO.doSaveUtente(utente);
+				HttpSession session = request.getSession();
+				utente.setId(utenteDAO.doRetrieveIdByUsername(username));
+				CarrelloDAO carrelloDAO = new CarrelloDAO();
+				carrelloDAO.doCreateCarrello(utente);
+				utente = utenteDAO.doRetrieveByUsernamePassword(username, password);
+				synchronized (session) {
+					session.setAttribute("utente", utente);
+					session.setAttribute("isCommon", Boolean.TRUE);
+					session.setAttribute("carrello", utente.getCarrello());
+				}
 			response.sendRedirect("http://localhost:8080/PeekABook/registration-success.jsp");
 			}
 		}

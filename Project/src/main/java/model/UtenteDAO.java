@@ -60,8 +60,23 @@ public class UtenteDAO {
 				c.setNumeroArticoli(rs.getInt("numeroArticoli"));
 			}
 			
-			return null;
-			////////////////// ?
+			ps=con.prepareStatement("SELECT * FROM ArticoloSelezionato ars, Articolo a WHERE ars.utente=? AND ars.articolo=a.codice");
+			ps.setInt(1, u.getId());
+			rs=ps.executeQuery();
+			Articolo a;
+			while(rs.next()) {
+				a=new Articolo();
+				a.setCodice(rs.getInt("a.codice"));
+				a.setPrezzo(rs.getDouble("a.prezzo"));
+				a.setNome(rs.getString("a.nome"));
+				a.setQuantita(rs.getInt("a.quantita"));
+				a.setPathImg(rs.getString("a.copertina"));
+				int qnt = rs.getInt("ars.quantita");
+				c.getArticoli().put(a,qnt);
+			}
+			u.setCarrello(c);
+			
+			return u;
 			
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
