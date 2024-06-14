@@ -25,28 +25,22 @@ if(isAdmin==null||!isAdmin){
 	<jsp:include page="../header.jsp"></jsp:include>
 	<div class="products">
 		<div class="container">
-		<a href="" style="position: absolute; right: 40px; text-decoration: none; color: black;margin-top: -20px; cursor: pointer;">Logout</a>
-			<h1 class="lg-title">Pannello di controllo</h1>
+			<h1 class="lg-title">Aggiungi elementi al database</h1>
 			
-			<div class="product-items">
+			<div class="product-items" style="display: flex;justify-content:center;flex-wrap: wrap;">
 				<div class="product">
 					<div class="product-img">
-						<a href="http://localhost:8080/PeekABook/ShowUtenti"><h1 style="font-weight: 500">Utenti</h1></a>
+						<a href="http://localhost:8080/PeekABook/ShowOrdini"><h1 style="font-weight: 500; text-align:center ">Tutti gli ordini</h1></a>
 					</div>
 				</div>
 				<div class="product">
 					<div class="product-img">
-						<a href="http://localhost:8080/PeekABook/Ordini"><h1 style="font-weight: 500">Ordini</h1></a>
+						<a href=""><h1 style="font-weight: 500; text-align:center">Ordini per utente</h1></a>
 					</div>
 				</div>
 				<div class="product">
 					<div class="product-img">
-						<a href=""><h1 style="font-weight: 500">Aggiungi</h1></a>
-					</div>
-				</div>
-				<div class="product">
-					<div class="product-img">
-						<a href=""><h1 style="font-weight: 500">Modifica</h1><h1 style="font-weight: 500">prodotto</h1></a>
+						<a href=""><h1 style="font-weight: 500; text-align:center">Ordini per data</h1></a>
 					</div>
 				</div>
 			</div>
