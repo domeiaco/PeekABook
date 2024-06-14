@@ -25,7 +25,7 @@ if(isAdmin==null||!isAdmin){
 	<jsp:include page="../header.jsp"></jsp:include>
 	<div class="products">
 		<div class="container">
-		<a href="" style="position: absolute; right: 40px; text-decoration: none; color: black;margin-top: -20px; cursor: pointer;">Logout</a>
+		<a href="http://localhost:8080/PeekABook/LogoutServlet" style="position: absolute; right: 40px; text-decoration: none; color: black;margin-top: -20px; cursor: pointer;">Logout</a>
 			<h1 class="lg-title">Pannello di controllo</h1>
 			
 			<div class="product-items">
