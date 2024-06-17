@@ -21,7 +21,7 @@ public class ShowUtenti extends HttpServlet{
 		HttpSession session = request.getSession();
 		Utente adm = null;
 		adm = (Utente) session.getAttribute("utente");
-		List<Utente> utenti = utenteDAO.doRetrieveAllUtenti(adm, 0, 1000);
+		List<Utente> utenti = utenteDAO.doRetrieveAllUtentiExcAdm(adm, 0, 1000);
 		
 		request.setAttribute("utenti", utenti);
 		request.setAttribute("numeroUtenti", utenti.size());

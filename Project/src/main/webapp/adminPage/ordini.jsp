@@ -35,12 +35,12 @@ if(isAdmin==null||!isAdmin){
 				</div>
 				<div class="product">
 					<div class="product-img">
-						<a href=""><h1 style="font-weight: 500; text-align:center">Ordini per utente</h1></a>
+						<a href="http://localhost:8080/PeekABook/ChooseUtente"><h1 style="font-weight: 500; text-align:center">Ordini per utente</h1></a>
 					</div>
 				</div>
 				<div class="product">
 					<div class="product-img">
-						<a href=""><h1 style="font-weight: 500; text-align:center">Ordini per data</h1></a>
+						<a href="http://localhost:8080/PeekABook/ChooseData"><h1 style="font-weight: 500; text-align:center">Ordini per data</h1></a>
 					</div>
 				</div>
 			</div>

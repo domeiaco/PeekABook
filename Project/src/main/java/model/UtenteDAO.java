@@ -83,12 +83,42 @@ public class UtenteDAO {
 		}
 	}
 	
-	public List<Utente> doRetrieveAllUtenti(Utente adm, int limit, int offset){
+	public List<Utente> doRetrieveAllUtentiExcAdm(Utente adm, int limit, int offset){
 		try(Connection con = ConPool.getConnection()){
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM Utente WHERE id!=? LIMIT ?,?");
 			ps.setInt(1, adm.getId());
 			ps.setInt(2, limit);
 			ps.setInt(3, offset);
+			ResultSet rs = ps.executeQuery();
+			ArrayList<Utente> utenti= new ArrayList<>();
+			Utente u;
+			
+			while(rs.next()) {
+				u=new Utente();
+				u.setId(rs.getInt(1));
+				u.setAdmin(rs.getInt(2));
+				u.setEmail(rs.getString(3));
+				u.setUsername(rs.getString(4));
+				u.setPassword(rs.getString(5));
+				u.setNome(rs.getString(6));
+				u.setCognome(rs.getString(7));
+				u.setVia(rs.getString(8));
+				u.setCivico(rs.getInt(9));
+				u.setCitta(rs.getString(10));
+				u.setCap(rs.getInt(11));
+				utenti.add(u);
+			}
+			return utenti;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public List<Utente> doRetrieveAllUtenti(int limit, int offset){
+		try(Connection con = ConPool.getConnection()){
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM Utente LIMIT ?,?");
+			ps.setInt(1, limit);
+			ps.setInt(2, offset);
 			ResultSet rs = ps.executeQuery();
 			ArrayList<Utente> utenti= new ArrayList<>();
 			Utente u;

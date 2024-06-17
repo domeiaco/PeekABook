@@ -31,12 +31,12 @@
 				<c:choose>
 					<c:when test="${utente.admin==1}">
 					<ul>
-						<li><a class="icons" href="http://localhost:8080/PeekABook/AdminPage" id="user"><i class="fa-solid fa-user-gear fa-lg"></i></a></li>
+						<li><a class="icons" href="http://localhost:8080/PeekABook/AdminPage" id="user"><i style="margin-right: 0px!important;" class="fa-solid fa-user-gear fa-lg"></i></a></li>
 					</ul>
 					</c:when>
 					<c:otherwise>
 					<ul>
-						<li><a class="icons" href="http://localhost:8080/PeekABook/UserPage" id="user"><i class="fa-solid fa-user fa-lg"></i></a></li>
+						<li><a class="icons" href="http://localhost:8080/PeekABook/UserPage" id="user"><i style="margin-right: 0px!important;" class="fa-solid fa-user fa-lg"></i></a></li>
 					</ul>
 					</c:otherwise>
 				</c:choose>
@@ -50,12 +50,12 @@
 		<c:choose>
 			<c:when test="${not empty utente}">
 			<ul>
-				<li><a class="icons" href="http://localhost:8080/PeekABook/ShowCarrello" id="cart"><i class="fas fa-shopping-cart fa-lg"></i><p style="color: white; display: inline; margin-left: 3px;">${carrello.numeroArticoli}</p></a></li>
+				<li><a class="icons" href="http://localhost:8080/PeekABook/ShowCarrello" id="cart"><i style="margin-right: 0px!important;" class="fas fa-shopping-cart fa-lg"></i><p style="color: white; display: inline; margin-left: 3px;">${carrello.numeroArticoli}</p></a></li>
 			</ul>
 			</c:when>
 			<c:otherwise>
 			<ul>
-				<li><a class="icons" href="http://localhost:8080/PeekABook/login.html" id="cart"><i class="fas fa-shopping-cart fa-lg"></i></a></li>
+				<li><a class="icons" href="http://localhost:8080/PeekABook/login.html" id="cart"><i style="margin-right: 0px!important;" class="fas fa-shopping-cart fa-lg"></i></a></li>
 			</ul>
 			</c:otherwise>
 		</c:choose>

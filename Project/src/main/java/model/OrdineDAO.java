@@ -1,6 +1,7 @@
 package model;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -139,6 +140,36 @@ public class OrdineDAO {
 			return rows > 0 ? 1 : 0;
 
 		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+	}
+	
+	public List<Ordine> doRetrieveOrdiniByData(Date start, Date end){
+		try(Connection con = ConPool.getConnection()){
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM Ordine WHERE dataordine BETWEEN ? AND ?;");
+			ps.setDate(1, start);
+			ps.setDate(2, end);
+			
+			ResultSet rs = ps.executeQuery();
+			ArrayList<Ordine> ordini = new ArrayList<>();
+			Ordine o;
+			UtenteDAO utente = new UtenteDAO();
+			while(rs.next()) {
+				o=new Ordine();
+				o.setUtente(utente.doRetrieveById(rs.getInt(1)));
+				o.setNumero(rs.getInt(2));
+				o.setVia(rs.getString(3));
+				o.setCivico(rs.getInt(4));
+				o.setCitta(rs.getString(5));
+				o.setCap(rs.getInt(6));
+				o.setDataOrdine(rs.getObject(7,LocalDate.class));
+				o.setDataConsegna(rs.getObject(8,LocalDate.class));
+				o.setStato(rs.getString(9));
+				ordini.add(o);
+			}
+			
+			return ordini;
+		} catch(SQLException e) {
 			throw new RuntimeException(e);
 		}
 	}

@@ -28,7 +28,7 @@ public class RemoveAdmin extends HttpServlet {
 		Utente u = new Utente();
 		u.setId(id);
 		utenteDAO.doRemoveAdmin(u);
-		List<Utente> utenti = utenteDAO.doRetrieveAllUtenti(adm, 0, 1000);
+		List<Utente> utenti = utenteDAO.doRetrieveAllUtentiExcAdm(adm, 0, 1000);
 		request.setAttribute("utenti", utenti);
 		request.setAttribute("numeroUtenti", utenti.size());
 		
