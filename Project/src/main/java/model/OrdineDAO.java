@@ -97,7 +97,7 @@ public class OrdineDAO {
 		}
 	}
 
-	public int doSaveOrdine(Utente utente, Carrello carrello, String metodoPagamento) {
+	public int doSaveOrdine(Utente utente, Carrello carrello, Ordine ordine) {
 		try (Connection con = ConPool.getConnection()) {
 			ArticoloDAO articoloDAO = new ArticoloDAO();
 			Set<Articolo> keys = carrello.getArticoli().keySet();
@@ -109,14 +109,14 @@ public class OrdineDAO {
 			PreparedStatement ps = con.prepareStatement(
 					"INSERT INTO Ordine (utente,via,civico,citta,CAP,dataOrdine,dataConsegna,stato,metodoPagamento) VALUES (?,?,?,?,?,?,?,?,?)");
 			ps.setInt(1, utente.getId());
-			ps.setString(2, utente.getVia());
+			ps.setString(2, ordine.getVia());
 			ps.setInt(3, utente.getCivico());
-			ps.setString(4, utente.getCitta());
-			ps.setInt(5, utente.getCap());
+			ps.setString(4, ordine.getCitta());
+			ps.setInt(5, ordine.getCap());
 			ps.setObject(6, java.sql.Date.valueOf(LocalDate.now()));
 			ps.setObject(7, java.sql.Date.valueOf(LocalDate.now().plusDays(2)));
 			ps.setString(8, "In preparazione");
-			ps.setString(9, metodoPagamento);
+			ps.setString(9, ordine.getMetodoPagamento());
 			int rows = ps.executeUpdate();
 
 			CarrelloDAO c = new CarrelloDAO();

@@ -63,6 +63,7 @@ if(isAdmin==null||!isAdmin){
 									<h4 class="product-price">Data ordine: ${ordine.dataOrdine}</h4>
 									<h4 class="product-price">Data consegna: ${ordine.dataConsegna}</h4>
 									<h4 class="product-price">Stato: ${ordine.stato}</h4>
+									<h4 class="product-price">Metodo di pagamento: ${ordine.metodoPagamento}</h4>
 									<div style="display: flex">
 									<p class="product-remove">
 												<i class="fa-solid fa-dolly" aria-hidden="true"></i> <a

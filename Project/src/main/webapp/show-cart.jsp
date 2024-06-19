@@ -43,9 +43,10 @@
 								<img alt="immagine prodotto" src="./images/${prodotto.pathImg}">
 								<div class="product-info">
 									<h3 class="product-name">${prodotto.nome}</h3>
-									<h4 class="product-price">Prezzo: €${prodotto.prezzo * carrello.articoli[prodotto] }</h4>
+									<h4 class="product-price">Prezzo: €${prodotto.prezzo}</h4>
+									<h4 class="product-price">Prezzo totale: €${prodotto.prezzo * carrello.articoli[prodotto]}</h4>
 									<p class="product-quantity">Quantità: <input type="number" min="1" max="5" id=${prodotto.codice} name="quantita" value="${carrello.articoli[prodotto]}" onchange="updateQuantity(this.id,this.value)">
-									<p class="product-remove">
+									<p class="product-remove" style="margin-top:15px;display: inline;position: absolute;bottom: 5px;right: 5px;">
 										<i class="fa fa-trash" aria-hidden="true"></i>		
 										<a href="http://localhost:8080/PeekABook/RemoveProductCarrello?id=${prodotto.codice}" style="text-decoration: none; color:white;"><span class="remove">Rimuovi</span></a>							
 									</p>

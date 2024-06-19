@@ -12,7 +12,7 @@ body{
 }
 
 .container{
-	max-width: 95%;
+	max-width: 1200px;
 	margin: 0 auto;
 }
 
@@ -89,8 +89,8 @@ body{
 	text-align: center;
 }
 
-i{
-	margin-right: 10px;
+.fa{
+	margin-right: 5px;
 }
 
 .cart-total{
@@ -121,4 +121,41 @@ i{
 
 .cart-total a:hover{
 	background-color: #0e4950;
+}
+
+@media screen and (max-width: 700px) {
+	
+	.remove{
+		display: inline;
+	}
+
+    .product {
+        height: 200px;
+    }
+    
+    .product >img {
+    height:200px;
+    width:200px;
+    }
+    
+    .product-price, .product-name{
+	margin-bottom: 10px
+	}
+}
+
+@media screen and (max-width: 900px){
+    .card{
+        flex-direction: column;
+    }
+    
+    .cart-total{
+    	margin-left:0;
+    	margin-bottom: 20px;
+    }
+}
+
+@media screen and (max-width:1220px){
+	.container{
+		max-width: 95%;
+	}
 }
