@@ -90,7 +90,11 @@ if(isAdmin==null||!isAdmin){
             	</select>
             	<small id="errorGenere">Error message</small>
         	</div>
-			<button type="submit" form="form">Registrati</button>
+        	<div class="form-control">
+	            <label for="imm">Immagine</label>
+            	<input type="file" min="1" placeholder="" id="imm" name="imm" accept=".jpg"/>
+        	</div>
+			<button type="submit" form="form">Conferma</button>
 		</form>
 	</div>
 	

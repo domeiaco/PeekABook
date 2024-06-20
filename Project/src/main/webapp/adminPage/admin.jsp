@@ -41,7 +41,7 @@ if(isAdmin==null||!isAdmin){
 				</div>
 				<div class="product">
 					<div class="product-img">
-						<a href=""><h1 style="font-weight: 500">Aggiungi</h1></a>
+						<a href="http://localhost:8080/PeekABook/Aggiungi"><h1 style="font-weight: 500">Aggiungi</h1></a>
 					</div>
 				</div>
 				<div class="product">

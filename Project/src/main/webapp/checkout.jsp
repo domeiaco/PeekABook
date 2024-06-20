@@ -57,10 +57,10 @@ if(isCommon==null&&isAdmin==null){
             	<label for="circuito">Circuito</label><br>
             	<select name="circuito" id="circuito" style="width:250px;height: 30px;border-radius: 10px;font-family: 'Montserrat';">
                     	<option value="Mastercard">Mastercard</option>
-                    	<option value="Mastercard">Visa</option>
-                    	<option value="Mastercard">American Express</option>
-                    	<option value="Mastercard">Maestro</option>
-                    	<option value="Mastercard">PagoBancomat</option>
+                    	<option value="Visa">Visa</option>
+                    	<option value="American Express">American Express</option>
+                    	<option value="Maestro">Maestro</option>
+                    	<option value="PagoBancomat">PagoBancomat</option>
             	</select>        
 	            <small id="errorCircuito">Error message</small>
         	</div>
