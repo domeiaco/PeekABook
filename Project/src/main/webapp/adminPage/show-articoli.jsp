@@ -52,7 +52,7 @@ if(isAdmin==null||!isAdmin){
                             <i class="fa-solid fa-wrench" aria-hidden="true"></i>
                             <a href="http://localhost:8080/PeekABook/UpdateProdotto?codice=${articolo.codice}" style="text-decoration: none; color: white;"><span class="remove">Modifica</span></a>
                         </p>
-                        <p class="product-remove" style="position: absolute; width:140px; bottom:70px!important; padding: 10px 25px; height: 40px;">
+                        <p class="product-remove">
                             <i class="fa-solid fa-trash" aria-hidden="true" ></i>
                             <a href="http://localhost:8080/PeekABook/RemoveProdotto?codice=${articolo.codice}" style="text-decoration: none; color: white;"><span class="remove">Elimina</span></a>
                         </p>
