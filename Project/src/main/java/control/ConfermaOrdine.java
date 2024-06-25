@@ -27,7 +27,12 @@ public class ConfermaOrdine extends HttpServlet {
 		
 		String circuito = request.getParameter("circuito");
 		String numeroCarta = request.getParameter("numero");
-		String metodoDiPagamento = circuito + " *" +numeroCarta.substring(12, 16);
+		String metodoDiPagamento="";
+		
+		if(circuito.equalsIgnoreCase("american express"))
+			metodoDiPagamento = circuito + " *" +numeroCarta.substring(11, 15);
+		else if(circuito.equalsIgnoreCase("Visa")||circuito.equalsIgnoreCase("Mastercard"))
+			metodoDiPagamento = circuito + " *" +numeroCarta.substring(12, 16);
 		
 		Ordine ordine = new Ordine();
 		ordine.setCap(cap);
