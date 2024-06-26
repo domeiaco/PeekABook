@@ -94,3 +94,23 @@ input[type="submit"]:hover{
 .signup-link a:hover{
     text-decoration: underline;
 }
+
+.text-fields span::before{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: #1e7682;
+    transition: .5s;
+}
+.text-fields input:focus ~ label,
+.text-fields input:valid ~ label{
+    top: -5px;
+    color: #1e7682;
+}
+.text-fields input:focus ~ span::before,
+.text-fields input:valid ~ span::before{
+    width: 100%;
+}

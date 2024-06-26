@@ -3,12 +3,14 @@ const emailPattern = /^\S{1,30}@\S{1,30}\.\S{1,20}$/;
 const civicoPattern = /^(\d+)$/;
 const userPattern = /^\w+$/;
 const capPattern= /^(\d{5})$/;
+const passwPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{8,}$/;
 
 const nameErrorMessage = "Può contenere solo lettere";
 const emailErrorMessage = "Deve essere nel formato username@domain.ext";
 const civicoErrorMessage = "Può contenere solo numeri (min='1')";
 const capErrorMessage = "Deve essere nel formato ##### (min='00001')";
 const usernameErrorMessage = "Può contenere solo caratteri alfanumerici";
+const passwErrorMessage = "8 caratteri di cui almeno una maiuscola, una minuscola, un numero e un simbolo";
 
 
 form.addEventListener('submit', e => {
@@ -51,7 +53,7 @@ function validate(){
 		total++;
 	}
 	
-	if(validateFormElem(form.password,userPattern,smallPassword,usernameErrorMessage)){
+	if(validateFormElem(form.password,passwPattern,smallPassword,passwErrorMessage)){
 		total++;
 	}
 	

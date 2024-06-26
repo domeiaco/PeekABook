@@ -61,6 +61,9 @@
 			</c:otherwise>
 		</c:choose>
 	</div>
+	<div class="cancel-icon">
+		<span class="fas fa-times"></span>
+	</div>
 	<div class="wrapper">
 		<div class="search-input">
 			<a href="" hidden></a>
@@ -72,5 +75,25 @@
 		</div>
 	</div>
 </nav>
+
+<script>
+	const menuButton = document.querySelector(".menu-icon span");
+	const cancelButton = document.querySelector(".cancel-icon");
+	const items = document.querySelector(".nav-items");
+	menuButton.onclick = ()=>{
+		items.classList.add("active");
+		menuButton.classList.add("hide");
+		cancelButton.classList.add("show");
+	}
+	cancelButton.onclick=()=>{
+		items.classList.remove("active");
+		menuButton.classList.remove("hide");
+		cancelButton.classList.remove("show");
+		cancelButton.style.color="#fff";
+	}
+	
+</script>
+
 </body>
+
 </html>

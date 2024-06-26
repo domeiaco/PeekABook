@@ -15,10 +15,6 @@ body{
 .card-wrapper{
 	max-width: 1100px;
 	margin: 0 auto;
-	height: 125vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
 }
 
 img{
@@ -135,13 +131,19 @@ img{
     opacity: 0.9;
 }
 
-.card{
+@media screen and (min-width: 902px){
+    .card{
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 1.5rem;
     }
-    
-   .product-imgs{
+    .card-wrapper{
+        height: 125vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-imgs{
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -149,3 +151,4 @@ img{
     .product-content{
         padding-top: 0;
     }
+}

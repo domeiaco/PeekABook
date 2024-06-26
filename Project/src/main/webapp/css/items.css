@@ -122,7 +122,29 @@ a.product-name:hover{
     background: #1e7682;
 }
 
-.product-items{
-	display: grid;
-	grid-template-columns: repeat(4, 1fr);
+@media screen and (min-width: 680px){
+    .product-items{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 950px){
+    .product-items{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .product{
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .product-items{
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .flex{
+        height: 60vh;
+    }
 }

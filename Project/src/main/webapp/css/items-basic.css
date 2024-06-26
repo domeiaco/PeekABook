@@ -57,18 +57,18 @@ img{
     padding: 0.5rem 0.5rem 0rem 0.5rem;
     cursor: pointer;
     border-radius: 60px;
+    width: 90%;
 }
 
- .product-items{
- 		display:grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
+.product-items{
+	width: 90vw;
+}
 
 .product-img {
     background: rgba(255,255,255,0.5);
     box-shadow: 0 0 20px 10px rgba(255,255,255,0.5);
-    width: 25rem;
-    height: 17rem;
+    width: 90%;
+    height: 15rem;
     margin: 1rem;
     border-radius: 50%;
     transition: background 0.5s ease;
@@ -81,7 +81,7 @@ img{
 .product-img a{
 	font-family: "Montserrat", sans-serif;
 	color: black;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	font-weight: 200;
 	text-decoration: none;
 }
@@ -94,4 +94,27 @@ img{
 	text-decoration-line: underline;
 	text-decoration-style: double;
 	text-underline-offset: 0.7rem;
+}
+
+@media screen and (min-width: 700px){
+    .product-items{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 1050px){
+    .product-items{
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .product{
+        margin-right: 1rem;
+        margin-left: 1rem;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .product-items{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
