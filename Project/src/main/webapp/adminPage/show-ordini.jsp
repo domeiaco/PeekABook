@@ -12,14 +12,7 @@
 	<link rel="shortcut icon" href="./icons/favico.jpg" type="image/x-icon">
 	<link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/display.css">
-    <c:choose>
-        <c:when test="${numeroOrdini<2}">
-            <link rel="stylesheet" href="./css/footer1.css">
-        </c:when>
-        <c:otherwise>
-            <link rel="stylesheet" href="./css/footer.css">
-        </c:otherwise>
-    </c:choose>
+    <link rel="stylesheet" href="./css/footer.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<style>
         .product-remove:hover a{
