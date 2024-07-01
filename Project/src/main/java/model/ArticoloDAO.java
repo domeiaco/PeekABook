@@ -48,19 +48,6 @@ public class ArticoloDAO {
 		}
 	}
 	
-	public int doUpdateValutazione(Articolo articolo, int valutazione) {
-		try (Connection con = ConPool.getConnection()){
-			PreparedStatement ps = con.prepareStatement("UPDATE Articolo SET valutazione=? WHERE codice=?");
-			ps.setDouble(1, valutazione);
-			ps.setInt(2, articolo.getCodice());
-			int x=ps.executeUpdate();
-			return x>0? 1:0;
-		}
-		catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
-	}
-	
 	public int doSaveArticolo(Articolo articolo) {
 		
 		try(Connection con = ConPool.getConnection()){
@@ -180,7 +167,7 @@ public class ArticoloDAO {
 		}
 	}
 	
-	public int doUpdateArticolo(Articolo articolo){
+	public int doUpdateArticoloFull(Articolo articolo){
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement("UPDATE Articolo SET prezzo=?, valutazione=?, quantita=?, copertina=? WHERE codice=?");
 

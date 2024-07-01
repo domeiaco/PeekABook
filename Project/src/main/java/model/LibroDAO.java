@@ -184,7 +184,7 @@ public class LibroDAO {
 	public int doUpdateLibro(Libro l){
         try (Connection con = ConPool.getConnection()) {
             ArticoloDAO articoloDAO = new ArticoloDAO();
-            articoloDAO.doUpdateArticolo(l);
+            articoloDAO.doUpdateArticoloFull(l);
 
             PreparedStatement ps=con.prepareStatement("UPDATE Libro SET autore=?, titolo=?, ISBN=?, anno=?, pagine=?, editore=?, descrizione=? WHERE articolo=?");
 
