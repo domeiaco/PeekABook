@@ -60,8 +60,8 @@ public class ArticoloDAO {
 			ps.setString(4, articolo.getPathImg());
 			ps.setString(5, articolo.getNome());
 		
+			
 			int x = ps.executeUpdate();
-	
 			return x>0 ? 1:0;
 		}
 		catch (SQLException e) {

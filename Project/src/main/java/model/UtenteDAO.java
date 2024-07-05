@@ -235,7 +235,7 @@ public class UtenteDAO {
 			else
 				return false;
 		} catch(SQLException e) {
-			throw new RuntimeException(e);
+			throw new RuntimeException(e); 
 		}
 	}
 	
