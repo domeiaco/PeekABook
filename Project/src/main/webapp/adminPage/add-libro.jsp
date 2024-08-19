@@ -34,7 +34,7 @@ if(isAdmin==null||!isAdmin){
 			</div>
 			<div class="form-control">
 				<label for="price">Prezzo</label>
-				<input type="number" step=".01" placeholder="" id="price" name="price" onchange="validateFormElem(this, pricePattern, document.getElementById('errorPrice'), priceErrorMessage)" />
+				<input type="number" min="1" step=".01" placeholder="" id="price" name="price" onchange="validateFormElem(this, pricePattern, document.getElementById('errorPrice'), priceErrorMessage)" />
 				<small id="errorPrice">Error message</small>
 			</div>
 			<div class="form-control">
@@ -92,7 +92,7 @@ if(isAdmin==null||!isAdmin){
         	</div>
         	<div class="form-control">
 	            <label for="imm">Immagine</label>
-            	<input type="file" min="1" placeholder="" id="imm" name="imm" accept=".jpg"/>
+            	<input required type="file" min="1" placeholder="" id="imm" name="imm" accept=".jpg"/>
         	</div>
 			<button type="submit" form="form">Conferma</button>
 		</form>

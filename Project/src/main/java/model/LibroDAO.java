@@ -143,14 +143,22 @@ public class LibroDAO {
 		try (Connection con = ConPool.getConnection()){
 			ArticoloDAO articoloDAO = new ArticoloDAO();
 			articoloDAO.doSaveArticolo(l);
-			PreparedStatement ps = con.prepareStatement("INSERT INTO Libro(autore, titolo, ISBN, anno, pagine, editore, descrizione) VALUES(?,?,?,?,?,?,?)");
-			ps.setInt(1, l.getAutore().getCodice());
-			ps.setString(2, l.getTitolo());
-			ps.setLong(3, l.getIsbn());
-			ps.setInt(4, l.getAnno());
-			ps.setInt(5, l.getPagine());
-			ps.setString(6, l.getEditore());
-			ps.setString(7, l.getDescrizione());
+			PreparedStatement ps = con.prepareStatement("SELECT codice FROM Articolo WHERE nome=? ORDER BY codice DESC");
+			ps.setString(1, l.getNome());
+	        ResultSet rs = ps.executeQuery();
+	        int cod=-1;
+	        if(rs.next()){
+	        	cod=rs.getInt("codice");
+	        }
+			ps = con.prepareStatement("INSERT INTO Libro(articolo,autore, titolo, ISBN, anno, pagine, editore, descrizione) VALUES(?,?,?,?,?,?,?,?)");
+			ps.setInt(1, cod);
+			ps.setInt(2, l.getAutore().getCodice());
+			ps.setString(3, l.getTitolo());
+			ps.setLong(4, l.getIsbn());
+			ps.setInt(5, l.getAnno());
+			ps.setInt(6, l.getPagine());
+			ps.setString(7, l.getEditore());
+			ps.setString(8, l.getDescrizione());
 			
 			int x=ps.executeUpdate();
 			return x>0? 1:0;
@@ -162,14 +170,13 @@ public class LibroDAO {
 	public int doSetGenereLibro(Libro l){
         try (Connection con = ConPool.getConnection()) {
 
-            PreparedStatement ps = con.prepareStatement("SELECT codice FROM Articolo ORDER BY codice DESC LIMIT 0,1");
-
-            ResultSet rs = ps.executeQuery();
-            int cod=-1;
-            if(rs.next()){
-                cod=rs.getInt("codice");
-            }
-
+        	PreparedStatement ps = con.prepareStatement("SELECT codice FROM Articolo WHERE nome=? ORDER BY codice DESC");
+			ps.setString(1, l.getNome());
+	        ResultSet rs = ps.executeQuery();
+	        int cod=-1;
+	        if(rs.next()){
+	        	cod=rs.getInt("codice");
+	        }
             ps = con.prepareStatement("INSERT INTO GenLibro VALUES (?,?)");
             ps.setInt(1, cod);
             ps.setString(2, l.getGenere().getNome());

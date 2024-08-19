@@ -4,7 +4,7 @@ use PeekABook;
 
 CREATE TABLE Utente(
 id int primary key auto_increment,
-adm tinyint(1) not null default 0,
+adm tinyint not null default 0,
 email varchar(40) not null,
 username varchar(20) not null,
 passwordHash varchar(256) not null,
@@ -13,7 +13,7 @@ cognome varchar(40) not null,
 via varchar(40) not null,
 civico int not null,
 citta varchar(40) not null,
-CAP int(5) not null);
+CAP int not null);
 
 CREATE TABLE Autore(
 codiceAutore int auto_increment primary key,
@@ -48,7 +48,7 @@ numero int auto_increment,
 via varchar(40) not null,
 civico int not null,
 citta varchar(40) not null,
-CAP int(5) not null,
+CAP int not null,
 dataOrdine date not null,
 dataConsegna date,
 stato varchar(20) not null,
@@ -57,10 +57,10 @@ primary key (numero));
 
 CREATE TABLE Libro(
 autore int,
-articolo int auto_increment,
+articolo int,
 titolo varchar(40) not null,
 ISBN long not null,
-anno int(4) not null,
+anno int not null,
 pagine int not null,
 editore varchar(30) not null,
 descrizione varchar(1000) not null,
@@ -72,11 +72,9 @@ CREATE TABLE Genere(
 nome varchar(30) primary key);
 
 CREATE TABLE GenLibro(
-libro int,
+libro int primary key,
 genere varchar(30),
-foreign key(libro) references Libro(articolo) on update cascade on delete cascade,
-foreign key(genere) references Genere(nome) on update cascade on delete cascade,
-primary key(libro, genere));
+foreign key(genere) references Genere(nome) on update cascade on delete cascade);
 
 INSERT INTO Autore(nome, cognome) VALUES
 ("Jules", "Verne"),
