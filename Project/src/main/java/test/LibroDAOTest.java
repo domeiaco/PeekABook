@@ -50,7 +50,7 @@ public class LibroDAOTest {
 	
 	@Test
 	public void doRetrieveLibroTest() {
-		assertTrue(libroDAO.doRetrieveLibro(0, 1000).size()==26);
+		assertTrue(libroDAO.doRetrieveLibro(0, 1000).size()==28);
 	}
 
 }

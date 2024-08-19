@@ -32,7 +32,7 @@ public class UtenteDAOTest {
 	
 	@Test
 	public void doRetrieveAllUtentiTest() {
-		assertTrue(utenteDAO.doRetrieveAllUtenti(0, 1000).size()==3);
+		assertTrue(utenteDAO.doRetrieveAllUtenti(0, 1000).size()==6);
 	}
 	
 	@Test

@@ -32,7 +32,7 @@ public class ArticoloDAOTest {
 	public void doRetrieveArticoliTest() {
 		List<Articolo> list = new ArrayList<>();
 		list = articoloDAO.doRetrieveArticoli(0,1000);
-		assertTrue(list.size()==26);
+		assertTrue(list.size()==28);
 	}
 	
 	@Test
